@@ -122,8 +122,8 @@ export default {
         }
       )
       .then(response => (this.fileurl = response))
-      .catch(function(){
-        console.log('FAILURE!!');
+      .catch(err => {
+        console.log(err)
       });
 
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
