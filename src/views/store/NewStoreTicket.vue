@@ -107,7 +107,7 @@ export default {
         this.selectedType = this.value
     },
     handleFileUpload(){
-      this.file = document.body.getElementById(‘attachmentHidden’).file.files[0];
+      this.file = document.body.getElementById('attachmentHidden').file.files[0];
     },
     submitTicket: function () {
       let formData = new FormData();
