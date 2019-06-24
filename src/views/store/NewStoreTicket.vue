@@ -104,7 +104,7 @@ export default {
         this.selectedStore = this.value
     },
     submitTicket: function () {
-      axios.post('https://gasupport.pizza4ps.com/api4/create_ticket', {
+      axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
         ticket: {
           summary: this.summary,
           due_date: "",
