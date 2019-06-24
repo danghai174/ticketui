@@ -103,7 +103,8 @@ export default {
       inputModel2: null,
       imageRegular: require("@/assets/img/image_placeholder.jpg"),
       imageCircle: require("@/assets/img/placeholder.jpg"),
-      hasImage: false
+      hasImage: false,
+      file: ''
     };
   },
   methods: {
@@ -111,6 +112,7 @@ export default {
       e.preventDefault();
       let files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
+      this.file = files[0];
       let file = files[0];
       let reader = new FileReader();
       let vm = this;

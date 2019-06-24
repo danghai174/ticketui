@@ -94,8 +94,7 @@ export default {
       selectedStore: "",
       description: "",
       selectedType: "",
-      file: '',
-      fileurl: ''
+      fileUpload: FileUpload.data
     };
   },
   methods: {
@@ -111,8 +110,8 @@ export default {
     },
     submitTicket: function () {
       let formData = new FormData();
-      let file = this.$refs.attachmentHidden.files[0];
-      formData.append('file', file);
+      console.log(fileUpload.file);
+      formData.append('file', fileUpload.file);
       console.log(formData)
       axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
         formData,
