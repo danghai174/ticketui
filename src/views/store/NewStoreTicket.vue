@@ -114,7 +114,7 @@ export default {
       let formData = new FormData();
       formData.append('file', this.file);
 
-      axios.post( 'api4/uploadefile',
+      axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
         formData,
         {
           headers: {
