@@ -10,7 +10,7 @@
               <h4 slot="title" class="card-title">Store ticket</h4>
               <md-field slot="inputs">
                 <label for="movie">Choose Store (*)</label>
-                <md-select v-model="selectedStore" tname="store" id="store">
+                <md-select @change="onChange($event)" v-model="selectedStore" tname="store" id="store">
                   <md-option
                     :value="store.name"
                     v-for="(store, index) in stores"
@@ -92,13 +92,18 @@ export default {
       image: require("@/assets/img/profile_city.jpg"),
       firstname: "",
       email: null,
-      password: null
+      password: null,
+      storename: ""
     };
   },
   methods: {
+    onChange(event) {
+        this.storename = event.target.value
+        console.log(event.target.value)
+    },
     submitTicket: function (event) {
       // `this` inside methods points to the Vue instance
-      alert('Hello ' + this.store.name + '!')
+      alert('Hello ' + this.storename + '!')
       // `event` is the native DOM event
       if (event) {
         alert(event.target.tagName)
