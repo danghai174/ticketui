@@ -104,8 +104,7 @@ export default {
         this.selectedStore = this.value
     },
     submitTicket: function () {
-      let currentObj = this;
-      this.axios.post('https://support.pizza4ps.com/api/create_ticket', {
+      axios.post('https://support.pizza4ps.com/api/create_ticket', {
         ticket: {
           summary: this.summary,
           due_date: "",
@@ -115,14 +114,7 @@ export default {
           c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore,
         }
-      }) 
-      .then(function (response) {
-          currentObj.output = response.data;
-      })
-      .catch(function (error) {
-          currentObj.output = error;
       });
-
       }
     }
   }
