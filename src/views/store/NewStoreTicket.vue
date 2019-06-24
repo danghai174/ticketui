@@ -36,7 +36,7 @@
               </md-field>
               
               <file-upload
-                type="input"
+                type="file"
                 placeholder="Select file"
                 input-name="fileSimple2"
                 btn-icon="attach_file"
