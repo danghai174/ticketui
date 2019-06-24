@@ -56,6 +56,7 @@
 <script>
 import { LoginCard, FileUpload } from "@/components";
 import Mixins from "@/plugins/basicMixins";
+import axios from 'axios';
 
 export default {
   mixins: [Mixins.HeaderImage],
