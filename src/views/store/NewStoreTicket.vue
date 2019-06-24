@@ -102,7 +102,7 @@ export default {
     },
     submitTicket: function (event) {
       // `this` inside methods points to the Vue instance
-      alert('Hello ' + this.storename + '!')
+      alert('Hello ' + this.selectedStore.value + '!')
       // `event` is the native DOM event
       if (event) {
         alert(event.target.tagName)
