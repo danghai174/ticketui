@@ -108,6 +108,7 @@ export default {
     },
     handleFileUpload(){
       this.file = document.body.getElementById('attachmentHidden').file.files[0];
+      console.log(this.file);
     },
     submitTicket: function () {
       let formData = new FormData();
