@@ -114,7 +114,7 @@ export default {
           c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore,
         }
-      });
+      },{crossdomain: true});
       }
     }
   }
