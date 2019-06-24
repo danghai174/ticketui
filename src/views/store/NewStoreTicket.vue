@@ -93,11 +93,11 @@ export default {
       ],
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
-      firstname: "",
       selectedStore: "",
       description: "",
       selectedType: "",
-      file: ''
+      file: '',
+      fileurl: 
     };
   },
   methods: {
@@ -111,18 +111,33 @@ export default {
       this.file = this.$refs.file.files[0];
     },
     submitTicket: function () {
+      let formData = new FormData();
+      formData.append('file', this.file);
+
+      axios.post( 'api4/uploadefile',
+        formData,
+        {
+          headers: {
+              'Content-Type': 'multipart/form-data'
+          }
+        }
+      )
+      .then(response => (this.fileurl = response))
+      .catch(function(){
+        console.log('FAILURE!!');
+      });
+
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
         ticket: {
           summary: this.summary,
           due_date: "",
           site_id: "1",
           submitted_by_email: "abc@pizza4ps.com",
-          description: this.description,
+          description: this.description + "\nAttachment: " + this.fileurl,
           c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore
         }
-      },
-        { crossdomain: true });
+      });
       }
     }
   }
