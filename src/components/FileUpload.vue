@@ -41,7 +41,7 @@
           <input
             type="file"
             :id="inputName + 'Hidden'"
-            :ref="inputName + 'Hidden'"
+            ref="file"
             @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
           />
         </md-field>
@@ -61,12 +61,12 @@
               :id="inputName + 'Hidden'"
               @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
               v-if="!multiple"
-              :ref="inputName + 'Hidden'"
+              ref="file"
             />
             <input
               type="file"
               :id="inputName + 'Hidden'"
-              :ref="inputName + 'Hidden'"
+              ref="file"
               :multiple="multiple"
               @change="
                 newValueMultiple(inputName + 'Visible', inputName + 'Hidden')
