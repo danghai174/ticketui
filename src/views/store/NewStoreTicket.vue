@@ -93,13 +93,12 @@ export default {
       firstname: "",
       email: null,
       password: null,
-      storename: ""
+      selectedStore: ""
     };
   },
   methods: {
-    onChange(event) {
-        this.storename = event.target.value
-        console.log(event.target.value)
+    onChange() {
+        console.log(this.selectedStore.value)
     },
     submitTicket: function (event) {
       // `this` inside methods points to the Vue instance
