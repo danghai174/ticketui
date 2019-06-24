@@ -36,7 +36,7 @@
               </md-field>
               
               <file-upload
-                type="file"
+                type="input"
                 placeholder="Select file"
                 input-name="fileSimple2"
                 btn-icon="attach_file"
@@ -44,6 +44,7 @@
                 slot="inputs"
                 v-on:change="handleFileUpload()"
                 ref="file"
+                id="file"
               >
               </file-upload>
               <md-button slot="footer" class="md-success" v-on:click="submitTicket">Submit</md-button>
