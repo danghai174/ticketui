@@ -42,6 +42,8 @@
                 btn-icon="attach_file"
                 with-button
                 slot="inputs"
+                v-on:change="handleFileUpload()"
+                ref="file"
               >
               </file-upload>
               <md-button slot="footer" class="md-success" v-on:click="submitTicket">Submit</md-button>
@@ -92,11 +94,10 @@ export default {
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       firstname: "",
-      email: null,
-      password: null,
       selectedStore: "",
       description: "",
-      selectedType: ""
+      selectedType: "",
+      file: ''
     };
   },
   methods: {
@@ -105,6 +106,9 @@ export default {
     },
     selecttype: function() {
         this.selectedType = this.value
+    },
+    handleFileUpload(){
+      this.file = this.$refs.file.files[0];
     },
     submitTicket: function () {
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
