@@ -112,7 +112,7 @@ export default {
           submitted_by_email: "abc@pizza4ps.com",
           description: this.description,
           c_store_problem_type: this.selectedType,
-          c_store_list: this.selectedStore,
+          c_store_list: this.selectedStore
         }
       },{crossdomain: true});
       }
