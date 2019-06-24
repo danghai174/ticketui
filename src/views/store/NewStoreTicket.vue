@@ -38,13 +38,11 @@
               <file-upload
                 type="input"
                 placeholder="Select file"
-                input-name="fileSimple2"
+                input-name="attachment"
                 btn-icon="attach_file"
                 with-button
                 slot="inputs"
                 v-on:change="handleFileUpload()"
-                ref="file"
-                id="file"
               >
               </file-upload>
               <md-button slot="footer" class="md-success" v-on:click="submitTicket">Submit</md-button>
@@ -109,7 +107,7 @@ export default {
         this.selectedType = this.value
     },
     handleFileUpload(){
-      this.file = this.$refs.file.files[0];
+      this.file = document.body.getElementById(‘attachmentHidden’).file.files[0];
     },
     submitTicket: function () {
       let formData = new FormData();
