@@ -10,7 +10,7 @@
               <h4 slot="title" class="card-title">Store ticket</h4>
               <md-field slot="inputs">
                 <label for="movie">Choose Store (*)</label>
-                <md-select @change="onChange($event)" v-model="selectedStore" tname="store" id="store">
+                <md-select @change="selectstore($event)" v-model="selectedStore" tname="store" id="store">
                   <md-option
                     :value="store.name"
                     v-for="(store, index) in stores"
@@ -21,7 +21,7 @@
               </md-field>
               <md-field slot="inputs">
                 <label for="movie">Store Ticket Type (*)</label>
-                <md-select v-model="ticketType" name="ticketType" id="ticketType">
+                <md-select  @change="selecttype($event)" v-model="ticketType" name="ticketType" id="ticketType">
                   <md-option value="POS">POS</md-option>
                   <md-option value="IT Devices">IT Devices</md-option>
                 </md-select>
@@ -88,25 +88,40 @@ export default {
           name: "HCM-VVK"
         }
       ],
-      Summary: "",
+      summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       firstname: "",
       email: null,
       password: null,
-      selectedStore: ""
+      selectedStore: "",
+      description: "",
+      selectedType: ""
     };
   },
   methods: {
-    onChange: function() {
+    selectstore: function() {
         this.selectedStore = this.value
-        console.log(this.selectedStore)
     },
-    submitTicket: function (event) {
-      // `this` inside methods points to the Vue instance
-      alert('Hello ' + this.selectedStore + '!')
-      // `event` is the native DOM event
-      if (event) {
-        alert(event.target.tagName)
+    submitTicket: function () {
+      let currentObj = this;
+      this.axios.post('https://support.pizza4ps.com/api/create_ticket', {
+        ticket: {
+          summary: this.summary,
+          due_date: "",
+          site_id: "1",
+          submitted_by_email: "abc@pizza4ps.com",
+          description: this.description,
+          c_store_problem_type: this.selectedType,
+          c_store_list: this.selectedStore,
+        }
+      }) 
+      .then(function (response) {
+          currentObj.output = response.data;
+      })
+      .catch(function (error) {
+          currentObj.output = error;
+      });
+
       }
     }
   }
