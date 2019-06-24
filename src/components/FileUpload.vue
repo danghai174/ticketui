@@ -113,6 +113,7 @@ export default {
       let files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
       this.file = files[0];
+      console.log(this.file);
       let file = files[0];
       let reader = new FileReader();
       let vm = this;

@@ -110,6 +110,7 @@ export default {
     },
     submitTicket: function () {
       let formData = new FormData();
+      console.log(this.fileUpload);
       console.log(this.fileUpload.file);
       formData.append('file', this.fileUpload.file);
       console.log(formData)
