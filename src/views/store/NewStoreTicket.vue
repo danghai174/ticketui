@@ -103,6 +103,9 @@ export default {
     selectstore: function() {
         this.selectedStore = this.value
     },
+    selecttype: function() {
+        this.selectedType = this.value
+    },
     submitTicket: function () {
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
         ticket: {
@@ -111,7 +114,7 @@ export default {
           site_id: "1",
           submitted_by_email: "abc@pizza4ps.com",
           description: this.description,
-          c_store_problem_type: this.selectedType,
+          c_store_problem_type: this.ticketType,
           c_store_list: this.selectedStore
         }
       },
