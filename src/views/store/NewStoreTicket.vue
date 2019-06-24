@@ -44,7 +44,7 @@
                 slot="inputs"
               >
               </file-upload>
-              <md-button slot="footer" class="md-success">Submit</md-button>
+              <md-button slot="footer" class="md-success" v-on:click="submitTicket">Submit</md-button>
             </login-card>
           </div>
         </div>
@@ -94,6 +94,16 @@ export default {
       email: null,
       password: null
     };
+  },
+  methods: {
+    submitTicket: function (event) {
+      // `this` inside methods points to the Vue instance
+      alert('Hello ' + this.stores.name + '!')
+      // `event` is the native DOM event
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
   }
 };
 </script>
