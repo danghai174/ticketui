@@ -97,7 +97,7 @@ export default {
       description: "",
       selectedType: "",
       file: '',
-      fileurl: 
+      fileurl: ''
     };
   },
   methods: {
