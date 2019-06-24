@@ -21,7 +21,7 @@
               </md-field>
               <md-field slot="inputs">
                 <label for="movie">Store Ticket Type (*)</label>
-                <md-select  @change="selecttype($event)" v-model="ticketType" name="ticketType" id="ticketType">
+                <md-select  @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
                   <md-option value="POS">POS</md-option>
                   <md-option value="IT Devices">IT Devices</md-option>
                 </md-select>
@@ -114,7 +114,7 @@ export default {
           site_id: "1",
           submitted_by_email: "abc@pizza4ps.com",
           description: this.description,
-          c_store_problem_type: this.ticketType,
+          c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore
         }
       },
