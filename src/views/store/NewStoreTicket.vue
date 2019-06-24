@@ -110,8 +110,8 @@ export default {
     },
     submitTicket: function () {
       let formData = new FormData();
-      console.log(fileUpload.file);
-      formData.append('file', fileUpload.file);
+      console.log(this.fileUpload.file);
+      formData.append('file', this.fileUpload.file);
       console.log(formData)
       axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
         formData,
