@@ -97,12 +97,13 @@ export default {
     };
   },
   methods: {
-    onChange() {
-        console.log(this.selectedStore.value)
+    onChange: function() {
+        this.selectedStore = this.value
+        console.log(this.selectedStore)
     },
     submitTicket: function (event) {
       // `this` inside methods points to the Vue instance
-      alert('Hello ' + this.selectedStore.value + '!')
+      alert('Hello ' + this.selectedStore + '!')
       // `event` is the native DOM event
       if (event) {
         alert(event.target.tagName)
