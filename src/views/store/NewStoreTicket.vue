@@ -60,6 +60,7 @@
 import { LoginCard, FileUpload } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 import axios from 'axios';
+Vue.use(FileUpload);
 
 export default {
   mixins: [Mixins.HeaderImage],
@@ -114,7 +115,7 @@ export default {
     submitTicket: function () {
       let formData = new FormData();
       formData.append('file', this.file);
-
+      console.log(formData)
       axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
         formData,
         {
