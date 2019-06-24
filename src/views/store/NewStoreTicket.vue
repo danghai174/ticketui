@@ -60,7 +60,6 @@
 import { LoginCard, FileUpload } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 import axios from 'axios';
-Vue.use(FileUpload);
 
 export default {
   mixins: [Mixins.HeaderImage],
