@@ -23,7 +23,7 @@
             <template v-else
               >Change</template
             >
-            <input type="file55555" :name="type"  @change="onFileChange" />
+            <input type="file" :name="type"  @change="onFileChange" />
           </md-button>
         </div>
       </div>
@@ -39,9 +39,8 @@
             :placeholder="placeholder"
           ></md-input>
           <input
-            type="file66666"
+            type="file"
             :id="inputName + 'Hidden'"
-            ref="file"
             @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
           />
         </md-field>
@@ -57,14 +56,14 @@
               :placeholder="placeholder"
             ></md-input>
             <input
-              type="file44444"
+              type="file"
               :id="inputName + 'Hidden'"
               @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
               v-if="!multiple"
               ref="file"
             />
             <input
-              type="file33333"
+              type="file"
               :id="inputName + 'Hidden'"
               ref="file"
               :multiple="multiple"
@@ -138,6 +137,7 @@ export default {
     },
     triggerInputFileHidden(hiddenID) {
       let element = document.getElementById(hiddenID);
+      this.file = element.files[0].name
       element.click();
     },
     newValue(visibleID, hiddenID) {

@@ -37,7 +37,7 @@
               
               <file-upload
                 type="input"
-                placeholder="Select file2222"
+                placeholder="Select file"
                 input-name="attachment"
                 btn-icon="attach_file"
                 slot="inputs"
@@ -106,7 +106,7 @@ export default {
     submitTicket: function () {
       let formData = new FormData();
       formData.append('file', this.fileUpload.file);
-      console.log(formData)
+      console.log(this.fileUpload.file)
       axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
         formData,
         {
