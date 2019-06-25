@@ -137,8 +137,8 @@ export default {
     },
     triggerInputFileHidden(hiddenID) {
       let element = document.getElementById(hiddenID);
-      this.file = element.file.name
       element.click();
+      this.file = element.files[0].name;
     },
     newValue(visibleID, hiddenID) {
       let element = document.getElementById(hiddenID);
