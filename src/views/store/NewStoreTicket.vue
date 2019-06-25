@@ -134,7 +134,7 @@ export default {
       this.save(formData);
     },
     submitTicket: function () {
-      let href = '<span><a href="/api4/getfile/' + this.fileurl + '">' + this.fileurl + '</a></span>';
+      let href = '\nAttachment: ' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl ;
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
         ticket: {
           summary: this.summary,
