@@ -140,7 +140,7 @@ export default {
           due_date: "",
           site_id: "1",
           submitted_by_email: this.submit_email,
-          description: this.description + "\nAttachment: " + this.fileurl,
+          description: this.description + "\n<b>Attachment:</b> https://gasupport.pizza4ps.com:8888/api4/getfile/" + this.fileurl,
           c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore
         }
