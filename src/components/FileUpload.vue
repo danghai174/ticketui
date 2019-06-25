@@ -41,6 +41,7 @@
           <input
             type="file"
             :id="inputName + 'Hidden'"
+            name="file"
             @change="newValue(inputName + 'Visible', inputName + 'Hidden'); $emit('fileHasChanged', $event)"
           />
         </md-field>
@@ -57,12 +58,14 @@
             ></md-input>
             <input
               type="file"
+              name="file"
               :id="inputName + 'Hidden'"
               @change="newValue(inputName + 'Visible', inputName + 'Hidden'); $emit('fileHasChanged', $event)"
               v-if="!multiple"
             />
             <input
               type="file"
+              name="file"
               :id="inputName + 'Hidden'"
               :multiple="multiple"
               @change="
