@@ -110,9 +110,7 @@ export default {
       axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
         formData,
         {
-          headers: {
-              'Content-Type': 'multipart/form-data'
-          }
+          headers: formData.getHeaders()
         }
       )
       .then(response => (this.fileurl = response))
