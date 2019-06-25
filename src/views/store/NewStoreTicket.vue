@@ -41,6 +41,7 @@
                 input-name="attachment"
                 btn-icon="attach_file"
                 slot="inputs"
+                with-button
               >
               </file-upload>
               <md-button slot="footer" class="md-success" v-on:click="submitTicket">Submit</md-button>
