@@ -35,7 +35,7 @@
                   v-model="defaultPagination"
                   :total="totalPages"
                   :per-page="3"
-                  @input="reloadTicketsData(page)"
+                  @input="reloadTicketsData($event)"
               ></pagination>
             </login-card>
           </div>
@@ -89,6 +89,7 @@ export default {
       return txt.value;
     },
     reloadTicketsData(page) {
+      console.log("Current page is " + page);
       storeTicketService.listAllOpeningTickets(this.email, page)
       .then(res => {
         this.tickets = res.data;
