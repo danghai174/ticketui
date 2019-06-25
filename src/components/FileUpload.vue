@@ -39,7 +39,7 @@
             :placeholder="placeholder"
           ></md-input>
           <input
-            type="file"
+            type="file2222"
             :id="inputName + 'Hidden'"
             ref="file"
             @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
