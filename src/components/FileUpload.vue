@@ -23,7 +23,7 @@
             <template v-else
               >Change</template
             >
-            <input type="file" :name="type" @change="onFileChange" />
+            <input type="file" :name="type" ref="file" @change="onFileChange" />
           </md-button>
         </div>
       </div>
