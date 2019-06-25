@@ -117,7 +117,7 @@ export default {
           }
         }
       )
-      .then(response => (this.fileurl = response))
+      .then(response => (this.fileurl = response.data))
       .catch(err => {
         console.log(err)
       });
