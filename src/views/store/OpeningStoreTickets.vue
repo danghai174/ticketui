@@ -72,7 +72,10 @@ export default {
     storeTicketService.listAllOpeningTickets(this.email, this.defaultPagination)
       .then(res => {
         this.tickets = res.data;
-        
+        var i;
+        for (i = 0; i < this.tickets.length; i++) { 
+          this.tickets[i].description= decodeURI(this.tickets[i].description);
+        }
         console.log(this.tickets);
       })
       .catch(err => console.error(err));
