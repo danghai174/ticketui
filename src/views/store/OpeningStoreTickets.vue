@@ -35,6 +35,7 @@
                   v-model="defaultPagination"
                   :total="totalPages"
                   :per-page="3"
+                  @input="reloadTicketsData(page)"
               ></pagination>
             </login-card>
           </div>
@@ -86,6 +87,19 @@ export default {
       var txt = document.createElement('textarea');
       txt.innerHTML = html;
       return txt.value;
+    },
+    reloadTicketsData(page) {
+      storeTicketService.listAllOpeningTickets(this.email, page)
+      .then(res => {
+        this.tickets = res.data;
+        var i;
+        for (i = 0; i < this.tickets.length; i++) { 
+          this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
+          console.log(this.tickets[i].description);
+        }
+        console.log(this.tickets);
+      })
+      .catch(err => console.error(err));
     }
   }
 };
