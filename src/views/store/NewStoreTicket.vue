@@ -40,6 +40,7 @@
                 placeholder="Select file2222"
                 input-name="attachment"
                 btn-icon="attach_file"
+                with-button
                 slot="inputs"
               >
               </file-upload>
