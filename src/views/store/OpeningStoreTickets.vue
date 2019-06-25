@@ -74,11 +74,19 @@ export default {
         this.tickets = res.data;
         var i;
         for (i = 0; i < this.tickets.length; i++) { 
-          this.tickets[i].description= decodeURI(this.tickets[i].description);
+          this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
+          console.log(this.tickets[i].description);
         }
         console.log(this.tickets);
       })
       .catch(err => console.error(err));
+  },
+  methods: {
+    decodeHTML(html) {
+      var txt = document.createElement('textarea');
+      txt.innerHTML = html;
+      return txt.value;
+    };
   }
 };
 </script>
