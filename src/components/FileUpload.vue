@@ -23,7 +23,7 @@
             <template v-else
               >Change</template
             >
-            <input type="file" :name="type"  @change="onFileChange" />
+            <input type="file" :name="type" @change="onFileChange" />
           </md-button>
         </div>
       </div>
@@ -41,7 +41,7 @@
           <input
             type="file"
             :id="inputName + 'Hidden'"
-            @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
+            @change="newValue(inputName + 'Visible', inputName + 'Hidden'); $emit('fileHasChanged', $event)"
           />
         </md-field>
       </template>
@@ -58,17 +58,15 @@
             <input
               type="file"
               :id="inputName + 'Hidden'"
-              @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
+              @change="newValue(inputName + 'Visible', inputName + 'Hidden'); $emit('fileHasChanged', $event)"
               v-if="!multiple"
-              ref="file"
             />
             <input
               type="file"
               :id="inputName + 'Hidden'"
-              ref="file"
               :multiple="multiple"
               @change="
-                newValueMultiple(inputName + 'Visible', inputName + 'Hidden')
+                newValueMultiple(inputName + 'Visible', inputName + 'Hidden'); $emit('fileHasChanged', $event)
               "
               v-else
             />
@@ -102,8 +100,7 @@ export default {
       inputModel2: null,
       imageRegular: require("@/assets/img/image_placeholder.jpg"),
       imageCircle: require("@/assets/img/placeholder.jpg"),
-      hasImage: false,
-      file: ''
+      hasImage: false
     };
   },
   methods: {
@@ -111,9 +108,6 @@ export default {
       e.preventDefault();
       let files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
-      this.file = files[0];
-      console.log("File changed");
-      console.log(this.file);
       let file = files[0];
       let reader = new FileReader();
       let vm = this;
@@ -138,9 +132,9 @@ export default {
     triggerInputFileHidden(hiddenID) {
       let element = document.getElementById(hiddenID);
       element.click();
-      this.file = element.files[0].name;
     },
     newValue(visibleID, hiddenID) {
+      console.log("File changed");
       let element = document.getElementById(hiddenID);
       let visibleElem = document.getElementById(visibleID);
       let elemValue = element.value;

@@ -42,6 +42,7 @@
                 btn-icon="attach_file"
                 slot="inputs"
                 with-button
+                @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
               >
               </file-upload>
               <md-button slot="footer" class="md-success" v-on:click="submitTicket">Submit</md-button>
@@ -103,6 +104,32 @@ export default {
     },
     selecttype: function() {
         this.selectedType = this.value
+    },
+    save(formData) {
+      // upload data to the server
+      axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
+        formData,
+        {
+          headers: {
+              'Content-Type': 'multipart/form-data'
+          }
+        }
+      )
+      .then(response => (this.fileurl = response))
+      .catch(err => {
+        console.log(err)
+      });
+    },
+    onFileChange(fieldName, fileList) {
+      console.log("File changed in parent");
+      console.log(fileList);
+      // handle file changes
+      const formData = new FormData();
+      if (!fileList.length) return;
+      // append the file to FormData
+      formData.append(fieldName,fileList[0])
+      // save it
+      this.save(formData);
     },
     submitTicket: function () {
       let formData = new FormData();
