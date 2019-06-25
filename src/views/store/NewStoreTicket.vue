@@ -145,6 +145,10 @@ export default {
           c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore
         }
+      }).then(res => {
+         router.push("opening-store-tickets");
+      }).catch(err => {
+        console.log(err);
       });
       }
     }
