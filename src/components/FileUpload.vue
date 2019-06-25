@@ -23,7 +23,7 @@
             <template v-else
               >Change</template
             >
-            <input type="file" :name="type"  @change="onFileChange" />
+            <input type="file55555" :name="type"  @change="onFileChange" />
           </md-button>
         </div>
       </div>
@@ -39,7 +39,7 @@
             :placeholder="placeholder"
           ></md-input>
           <input
-            type="file2222"
+            type="file"
             :id="inputName + 'Hidden'"
             ref="file"
             @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
@@ -57,14 +57,14 @@
               :placeholder="placeholder"
             ></md-input>
             <input
-              type="file"
+              type="file44444"
               :id="inputName + 'Hidden'"
               @change="newValue(inputName + 'Visible', inputName + 'Hidden')"
               v-if="!multiple"
               ref="file"
             />
             <input
-              type="file"
+              type="file33333"
               :id="inputName + 'Hidden'"
               ref="file"
               :multiple="multiple"
