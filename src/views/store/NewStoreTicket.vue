@@ -95,7 +95,8 @@ export default {
       selectedStore: "",
       description: "",
       selectedType: "",
-      fileUpload: FileUpload.data
+      fileurl: "",
+      submit_email: "abc@pizza4ps.com"
     };
   },
   methods: {
@@ -107,7 +108,8 @@ export default {
     },
     save(formData) {
       // upload data to the server
-      axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
+      const url = 'https://gasupport.pizza4ps.com:8888/api4/uploadefile/' + this.submit_email
+      axios.post( url,
         formData,
         {
           headers: {
@@ -132,28 +134,12 @@ export default {
       this.save(formData);
     },
     submitTicket: function () {
-      let formData = new FormData();
-      formData.append('file', this.fileUpload.file);
-      console.log(this.fileUpload.file)
-      axios.post( 'https://gasupport.pizza4ps.com:8888/api4/uploadefile',
-        formData,
-        {
-          headers: {
-              'Content-Type': 'multipart/form-data'
-          }
-        }
-      )
-      .then(response => (this.fileurl = response))
-      .catch(err => {
-        console.log(err)
-      });
-
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
         ticket: {
           summary: this.summary,
           due_date: "",
           site_id: "1",
-          submitted_by_email: "abc@pizza4ps.com",
+          submitted_by_email: this.submit_email,
           description: this.description + "\nAttachment: " + this.fileurl,
           c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore
