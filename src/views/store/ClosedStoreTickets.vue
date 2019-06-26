@@ -90,7 +90,7 @@ export default {
     },
     reloadTicketsData(page) {
       console.log("Current page is " + page);
-      storeTicketService.listAllOpeningTickets(this.email, page)
+      storeTicketService.listAllClosedTickets(this.email, page)
       .then(res => {
         this.tickets = res.data;
         var i;
