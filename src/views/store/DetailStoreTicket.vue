@@ -7,7 +7,7 @@
             class="md-layout-item md-size-80 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto"
           >
             <login-card header-color="green">
-              <h4 slot="title" class="card-title">Ticket number {{ticketid}}</h4>
+              <h4 slot="title" class="card-title">Ticket number #{{ticketid}}</h4>
               <h5
                 slot="inputs"
               >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, culpa consequatur. Quis officiis, voluptates eum rerum dolorem alias, ullam aspernatur tempore maxime quos voluptate perspiciatis vel, porro non laboriosam! Consequuntur.</h5>
@@ -91,11 +91,11 @@ export default {
           name: "HCM-VVK"
         }
       ],
-      defaultPagination: 3,
+      defaultPagination: 1,
       Summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       firstname: "",
-      ticketid: null,
+      ticketid: 1,
       tickets: []
 
     };
