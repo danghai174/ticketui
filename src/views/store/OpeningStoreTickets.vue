@@ -18,7 +18,7 @@
                     <div class="comment-body">
                         <h4 class="comment-heading">
                           <span v-html="ticket.summary"></span>
-                        <small>· 7 minutes ago</small>
+                        <small> v-html="ticket.created_at" </small>
                         </h4>
 
                         <p>
