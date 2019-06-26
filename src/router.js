@@ -26,7 +26,9 @@ import MainFooter from "./layout/MainFooter.vue";
 
 import NewStoreTicket from "./views/store/NewStoreTicket.vue";
 import OpeningStoreTickets from "./views/store/OpeningStoreTickets.vue";
+import OpeningStoreTickets from "./views/store/ClosedStoreTickets.vue";
 import DetailStoreTicket from "./views/store/DetailStoreTicket.vue";
+
 
 Vue.use(Router);
 
@@ -202,6 +204,14 @@ export default new Router({
       path: "/opening-store-tickets",
       name: "opening-store-tickets",
       components: { default: OpeningStoreTickets, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400, navbarTransparent: true }
+      }
+    },
+    {
+      path: "/closed-store-tickets",
+      name: "closed-store-tickets",
+      components: { default: ClosedStoreTickets, header: MainNavbar },
       props: {
         header: { colorOnScroll: 400, navbarTransparent: true }
       }
