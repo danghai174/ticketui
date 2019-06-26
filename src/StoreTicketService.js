@@ -12,5 +12,10 @@ export default class StoreTicketService {
     return axios.get(`/list_closed_tickets/${email}/page${page}`, {
       crossdomain: true
     });
+  };
+  DetailTicket(id) {
+    return axios.get(`/ticketdetail/${id}`, {
+      crossdomain: true
+    });
   }
 }
