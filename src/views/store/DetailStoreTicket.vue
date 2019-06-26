@@ -22,14 +22,18 @@
                   </md-button>
                 </div>
                 <div class="comment">
-                  <div class="comment-body">
+                  <div class="comment-body"
+                  v-for="(comment, index) in tickets[0].public_comments"
+                  :item="comment"
+                  :key="index"
+                  >
                     <h4 class="comment-heading">
-                      {{tickets[0].public_comments[0].creator.email}}
-                      <small> {{tickets[0].public_comments[0].created_at}}</small>
+                      {{comment.creator.email}}
+                      <small> {{comment.created_at}}</small>
                     </h4>
 
                     <p>
-                      {{tickets[0].public_comments[0].body}}
+                      {{comment.body}}
                     </p>
                   </div>
                 </div>
