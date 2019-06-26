@@ -44,7 +44,7 @@
                   :page-count="5"
                 ></pagination>
               </div>
-              <md-button slot="footer" class="md-success">Close ticket</md-button>
+              <md-button slot="footer" class="md-success" v-on:click="closeTicket">Close ticket</md-button>
             </login-card>
           </div>
         </div>
@@ -112,6 +112,18 @@ export default {
         console.log(this.tickets);
       })
       .catch(err => console.error(err));
+  },
+  methods:{
+    closeTicket: function () {
+      let href = '\nAttachment: ' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl ;
+      axios.post('https://gasupport.pizza4ps.com:8888/api4/close_ticket', {
+        id: this.ticketid
+      }).then(res => {
+         this.$router.push("closed-store-tickets");
+      }).catch(err => {
+        console.log(err);
+      });
+      }
   }
 };
 </script>
