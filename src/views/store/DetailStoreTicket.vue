@@ -24,16 +24,12 @@
                 <div class="comment">
                   <div class="comment-body">
                     <h4 class="comment-heading">
-                      Tina Andrew
-                      <small>· 7 minutes ago</small>
+                      {{tickets[0].public_comments[0].creator.email}}
+                      <small> {{tickets[0].public_comments[0].created_at}}</small>
                     </h4>
 
                     <p>
-                      Chance too good. God level bars. I'm so proud of
-                      @LifeOfDesiigner #1 song in the country. Panda! Don't be
-                      scared of the truth because we need to restart the human
-                      foundation in truth I stand with the most humility. We are so
-                      blessed!
+                      {{tickets[0].public_comments[0].body}}
                     </p>
                   </div>
                 </div>
