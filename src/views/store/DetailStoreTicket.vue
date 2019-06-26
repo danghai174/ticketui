@@ -129,7 +129,7 @@ export default {
         id: this.ticketid,
         comment: this.comment
       }).then(res => {
-         this.$router.push("closed-store-tickets");
+         this.$router.push("store-ticket");
       }).catch(err => {
         console.log(err);
       });
