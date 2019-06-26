@@ -26,7 +26,7 @@ import MainFooter from "./layout/MainFooter.vue";
 
 import NewStoreTicket from "./views/store/NewStoreTicket.vue";
 import OpeningStoreTickets from "./views/store/OpeningStoreTickets.vue";
-import OpeningStoreTickets from "./views/store/ClosedStoreTickets.vue";
+import ClosedStoreTickets from "./views/store/ClosedStoreTickets.vue";
 import DetailStoreTicket from "./views/store/DetailStoreTicket.vue";
 
 
