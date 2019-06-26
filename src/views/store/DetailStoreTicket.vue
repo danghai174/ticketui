@@ -10,7 +10,7 @@
               <h4 slot="title" class="card-title">Ticket number #{{ticketid}}</h4>
               <h5
                 slot="inputs"
-              >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, culpa consequatur. Quis officiis, voluptates eum rerum dolorem alias, ullam aspernatur tempore maxime quos voluptate perspiciatis vel, porro non laboriosam! Consequuntur.</h5>
+              >{{tickets[0].description}}</h5>
               <div class="comment-area" slot="inputs">
                 <md-field maxlength="5">
                   <label>Write a nice reply or go home...</label>
@@ -95,7 +95,7 @@ export default {
       Summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       firstname: "",
-      ticketid: 1,
+      ticketid: 80,
       tickets: []
 
     };
