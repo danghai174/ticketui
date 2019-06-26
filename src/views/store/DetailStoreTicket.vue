@@ -21,12 +21,12 @@
                     <md-icon>reply</md-icon>Reply
                   </md-button>
                 </div>
-                <div class="comment">
-                  <div class="comment-body"
-                  v-for="(comment, index) in tickets[0].public_comments"
+                <div class="comment"
+                                  v-for="(comment, index) in tickets[0].public_comments"
                   :item="comment"
                   :key="index"
-                  >
+                >
+                  <div class="comment-body">
                     <h4 class="comment-heading">
                       {{comment.creator.email}}
                       <small> {{comment.created_at}}</small>
