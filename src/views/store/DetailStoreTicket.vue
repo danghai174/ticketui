@@ -58,6 +58,7 @@ import { LoginCard, FileUpload, Pagination } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 import StoreTicketService from "../../StoreTicketService";
 const storeTicketService = new StoreTicketService();
+import axios from 'axios';
 
 export default {
   mixins: [Mixins.HeaderImage],
@@ -115,7 +116,6 @@ export default {
   },
   methods:{
     closeTicket: function () {
-      let href = '\nAttachment: ' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl ;
       axios.post('https://gasupport.pizza4ps.com:8888/api4/close_ticket', {
         id: this.ticketid
       }).then(res => {
