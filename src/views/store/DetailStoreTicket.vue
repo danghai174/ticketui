@@ -14,10 +14,10 @@
               <div class="comment-area" slot="inputs">
                 <md-field maxlength="5">
                   <label>Write a nice reply or go home...</label>
-                  <md-textarea v-model="aboutme"></md-textarea>
+                  <md-textarea v-model="comment"></md-textarea>
                 </md-field>
                 <div class="comment-footer">
-                  <md-button href="javascript:void(0)" class="md-success">
+                  <md-button href="javascript:void(0)" class="md-success" v-on:click="commentTicket">
                     <md-icon>reply</md-icon>Reply
                   </md-button>
                 </div>
@@ -95,8 +95,8 @@ export default {
       defaultPagination: 1,
       Summary: "",
       image: require("@/assets/img/profile_city.jpg"),
-      firstname: "",
-      ticketid: 191,
+      comment: "",
+      ticketid: 190,
       tickets: []
 
     };
@@ -123,8 +123,19 @@ export default {
       }).catch(err => {
         console.log(err);
       });
+      },
+    commentTicket: function () {
+      axios.post('https://gasupport.pizza4ps.com:8888/api4/post_comment', {
+        id: this.ticketid,
+        comment: this.comment
+      }).then(res => {
+         this.$router.push("closed-store-tickets");
+      }).catch(err => {
+        console.log(err);
+      });
       }
   }
+  
 };
 </script>
 
