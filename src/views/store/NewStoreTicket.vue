@@ -96,7 +96,7 @@ export default {
       description: "",
       selectedType: "",
       fileurl: "",
-      submit_email: "abc@pizza4ps.com"
+      submit_email: "1234@pizza4ps.com"
     };
   },
   methods: {
@@ -134,14 +134,15 @@ export default {
       this.save(formData);
     },
     submitTicket: function () {
-      let href = '\nAttachment: ' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl ;
+      let href = ''; 
+      if (this.fileurl) href = '\nAttachment: ' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl ;
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
         ticket: {
           summary: this.summary,
           due_date: "",
           site_id: "1",
           submitted_by_email: this.submit_email,
-          description: this.description + '\nAttachment: ' + href,
+          description: this.description + href,
           c_store_problem_type: this.selectedType,
           c_store_list: this.selectedStore
         }
