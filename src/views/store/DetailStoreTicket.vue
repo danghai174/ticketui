@@ -130,8 +130,19 @@ export default {
         id: this.ticketid,
         comment: this.comment
       }).then(res => {
-         storeTicketService.DetailTicket(this.ticketid);
-      }).catch(err => {
+         storeTicketService.DetailTicket(this.ticketid)
+          .then(res => {
+        this.tickets = res.data;
+        var i;
+        for (i = 0; i < this.tickets.length; i++) { 
+          this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
+          console.log(this.tickets[i].description);
+        }
+        console.log(this.tickets);
+      })
+      .catch(err => console.error(err));
+      })
+      .catch(err => {
         console.log(err);
       });
       }
