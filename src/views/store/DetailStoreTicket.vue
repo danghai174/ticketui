@@ -10,7 +10,9 @@
               <h4 slot="title" class="card-title">Ticket number #{{ticketid}}</h4>
               <h5
                 slot="inputs"
-              >{{tickets[0].description}}</h5>
+              >
+              <span v-html="tickets[0].description"></span>
+              </h5>
               <div class="comment-area" slot="inputs">
                 <md-field maxlength="5">
                   <label>Your comment</label>
