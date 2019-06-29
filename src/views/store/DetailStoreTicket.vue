@@ -21,7 +21,7 @@
                     <md-icon>reply</md-icon>Reply
                   </md-button>
                 </div>
-                <div class="comment"
+                <div class="comment" 
                                   v-for="(comment, index) in tickets[0].public_comments"
                   :item="comment"
                   :key="index"
@@ -44,7 +44,7 @@
                   :page-count="5"
                 ></pagination>
               </div>
-              <md-button slot="footer" class="md-success" v-on:click="closeTicket">Close ticket</md-button>
+              <md-button slot="footer" class="md-success" :key="commentkey" v-on:click="closeTicket">Close ticket</md-button>
             </login-card>
           </div>
         </div>
@@ -97,7 +97,8 @@ export default {
       image: require("@/assets/img/profile_city.jpg"),
       comment: "",
       ticketid: 199,
-      tickets: []
+      tickets: [],
+      commentkey: 0
 
     };
   },
@@ -129,7 +130,7 @@ export default {
         id: this.ticketid,
         comment: this.comment
       }).then(res => {
-         this.$router.push("store-ticket");
+         storeTicketService.DetailTicket(this.ticketid);
       }).catch(err => {
         console.log(err);
       });
