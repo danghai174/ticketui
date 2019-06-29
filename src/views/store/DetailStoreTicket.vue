@@ -173,7 +173,7 @@ export default {
     },
     commentTicket: function () {
       let href = ''; 
-      if (this.fileurl) href = '\nAttachment: <br href=' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl + '>' + this.fileurl + '</br>';
+      if (this.fileurl) href = '<br>Attachment: <a href=' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl + '>' + this.fileurl + '</a></br>';
       axios.post('https://gasupport.pizza4ps.com:8888/api4/post_comment', {
         id: this.ticketid,
         comment: this.comment + href
