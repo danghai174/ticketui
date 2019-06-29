@@ -108,6 +108,7 @@ export default {
       comment: "",
       ticketid: 199,
       tickets: [],
+      fileurl: "",
       commentkey: 0
 
     };
@@ -126,6 +127,22 @@ export default {
       .catch(err => console.error(err));
   },
   methods:{
+    save(formData) {
+      // upload data to the server
+      const url = 'https://gasupport.pizza4ps.com:8888/api4/uploadefile/' + this.submit_email
+      axios.post( url,
+        formData,
+        {
+          headers: {
+              'Content-Type': 'multipart/form-data'
+          }
+        }
+      )
+      .then(response => (this.fileurl = response.data))
+      .catch(err => {
+        console.log(err)
+      });
+    },
     onFileChange(fieldName, fileList) {
       console.log("File changed in parent");
       console.log(fileList);
@@ -147,9 +164,11 @@ export default {
       });
     },
     commentTicket: function () {
+      let href = ''; 
+      if (this.fileurl) href = '\nAttachment: ' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl ;
       axios.post('https://gasupport.pizza4ps.com:8888/api4/post_comment', {
         id: this.ticketid,
-        comment: this.comment
+        comment: this.comment + href
       }).then(res => {
          storeTicketService.DetailTicket(this.ticketid)
           .then(res => {
