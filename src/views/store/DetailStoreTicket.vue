@@ -128,6 +128,11 @@ export default {
       .catch(err => console.error(err));
   },
   methods:{
+    decodeHTML(html) {
+      var txt = document.createElement('textarea');
+      txt.innerHTML = html;
+      return txt.value;
+    },
     save(formData) {
       // upload data to the server
       const url = 'https://gasupport.pizza4ps.com:8888/api4/uploadefile/' + this.submit_email
