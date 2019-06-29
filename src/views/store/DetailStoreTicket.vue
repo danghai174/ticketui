@@ -16,17 +16,19 @@
                   <label>Write a nice reply or go home...</label>
                   <md-textarea v-model="comment"></md-textarea>
                 </md-field>
+                <file-upload
+                type="input"
+                placeholder="Select file"
+                input-name="attachment"
+                btn-icon="attach_file"
+                slot="inputs"
+                with-button
+                @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
+              >
+              </file-upload>
                 <div class="comment-footer">
                   <md-button href="javascript:void(0)" class="md-success" v-on:click="commentTicket">
                     <md-icon>reply</md-icon>Reply
-                    <file-upload
-                      type="input"
-                      input-name="attachment"
-                      btn-icon="attach_file"
-                      with-button
-                      @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
-                    >
-                    </file-upload>
                   </md-button>
                 </div>
                 <div class="comment" 
