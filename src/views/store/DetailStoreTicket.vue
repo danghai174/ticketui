@@ -52,7 +52,8 @@
                   class="justify-content-center"
                   type="success"
                   v-model="defaultPagination"
-                  :page-count="5"
+                  :page-count="3"
+                  @input="reloadTicketcomment($event)"
                 ></pagination>
               </div>
               <md-button slot="footer" class="md-success" :key="commentkey" v-on:click="closeTicket">Close ticket</md-button>
@@ -193,9 +194,21 @@ export default {
       .catch(err => {
         console.log(err);
       });
+      },
+    reloadTicketcomment(page) {
+      storeTicketService.DetailTicket(this.ticketid)
+        .then(res => {
+          this.tickets = res.data;
+          var i;
+          for (i = 0; i < this.tickets.length; i++) { 
+            this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
+            console.log(this.tickets[i].description);
+          }
+          console.log(this.tickets);
+          console.log(this.$route.query.id);
+        })
+        .catch(err => console.error(err)); 
       }
-  }
-  
 };
 </script>
 
