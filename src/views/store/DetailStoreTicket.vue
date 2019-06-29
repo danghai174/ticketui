@@ -24,7 +24,6 @@
                       placeholder="Select file"
                       input-name="attachment"
                       btn-icon="attach_file"
-                      slot="inputs"
                       with-button
                       @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
                     >
