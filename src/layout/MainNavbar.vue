@@ -34,7 +34,7 @@
             <md-list class="ml-auto">
               <md-list-item href="/#/new-store-ticket">New ticket</md-list-item>
               <md-list-item href="/#/opening-store-tickets">Opening tickets</md-list-item>
-              <md-list-item href="javascript:void(0)" target="_blank">Closed tickets</md-list-item>
+              <md-list-item href="/#/closed-store-tickets">Closed tickets</md-list-item>
             </md-list>
           </div>
         </div>

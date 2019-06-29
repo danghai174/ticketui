@@ -36,7 +36,7 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "index",
+      name: "new-store-ticket",
       components: { default: Index, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400, navbarTransparent: true }
