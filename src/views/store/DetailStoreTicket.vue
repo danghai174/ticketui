@@ -43,7 +43,7 @@
                     </h4>
 
                     <p>
-                      {{comment.body}}
+                     <span v-html="comment.body"></span>
                     </p>
                   </div>
                 </div>
