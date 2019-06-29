@@ -44,9 +44,8 @@
                       <small> {{comment.created_at}}</small>
                     </h4>
 
-                    <p>
+
                      <span v-html="comment.body"></span>
-                    </p>
                   </div>
                 </div>
                 <pagination
@@ -173,7 +172,7 @@ export default {
     },
     commentTicket: function () {
       let href = ''; 
-      if (this.fileurl) href = '<br>Attachment: <a href=' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl + '>' + this.fileurl + '</a></br>';
+      if (this.fileurl) href = '<br>\nAttachment: <a href=' + 'https://gasupport.pizza4ps.com:8888/getfile/' + this.fileurl + '>' + this.fileurl + '</a></br>';
       axios.post('https://gasupport.pizza4ps.com:8888/api4/post_comment', {
         id: this.ticketid,
         comment: this.comment + href
