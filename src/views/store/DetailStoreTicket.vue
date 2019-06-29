@@ -27,6 +27,7 @@
                       with-button
                       @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
                     >
+                    </file-upload>
                   </md-button>
                 </div>
                 <div class="comment" 
