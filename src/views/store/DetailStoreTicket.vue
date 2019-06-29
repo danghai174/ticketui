@@ -19,6 +19,7 @@
                 <div class="comment-footer">
                   <md-button href="javascript:void(0)" class="md-success" v-on:click="commentTicket">
                     <md-icon>reply</md-icon>Reply
+                    <br>
                     <file-upload
                       type="input"
                       placeholder="Select file"
@@ -28,6 +29,7 @@
                       @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
                     >
                     </file-upload>
+                    </br>
                   </md-button>
                 </div>
                 <div class="comment" 
