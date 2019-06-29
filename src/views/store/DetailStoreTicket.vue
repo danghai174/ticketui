@@ -107,7 +107,7 @@ export default {
       Summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       comment: "",
-      ticketid: 199,
+      ticketid: this.$route.query.id,
       tickets: [],
       fileurl: "",
       submit_email: "1234@pizza4ps.com",
@@ -125,6 +125,7 @@ export default {
           console.log(this.tickets[i].description);
         }
         console.log(this.tickets);
+        console.log(this.$route.query.id);
       })
       .catch(err => console.error(err));
   },
