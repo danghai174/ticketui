@@ -13,7 +13,7 @@
               >{{tickets[0].description}}</h5>
               <div class="comment-area" slot="inputs">
                 <md-field maxlength="5">
-                  <label>Write a nice reply or go home...</label>
+                  <label>Your comment</label>
                   <md-textarea v-model="comment"></md-textarea>
                 </md-field>
                 <file-upload
@@ -126,6 +126,17 @@ export default {
       .catch(err => console.error(err));
   },
   methods:{
+    onFileChange(fieldName, fileList) {
+      console.log("File changed in parent");
+      console.log(fileList);
+      // handle file changes
+      const formData = new FormData();
+      if (!fileList.length) return;
+      // append the file to FormData
+      formData.append(fieldName,fileList[0])
+      // save it
+      this.save(formData);
+    },
     closeTicket: function () {
       axios.post('https://gasupport.pizza4ps.com:8888/api4/close_ticket', {
         id: this.ticketid
@@ -134,7 +145,7 @@ export default {
       }).catch(err => {
         console.log(err);
       });
-      },
+    },
     commentTicket: function () {
       axios.post('https://gasupport.pizza4ps.com:8888/api4/post_comment', {
         id: this.ticketid,
