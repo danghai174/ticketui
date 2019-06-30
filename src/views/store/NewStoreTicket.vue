@@ -149,7 +149,7 @@ export default {
         }
       }).then(res => {
         console.log(res.data.success);
-        this.$router.push("opening-store-tickets");
+        this.$router.push("/store-ticket?id=" + res.data.success);
       }).catch(err => {
         console.log(err);
       });
