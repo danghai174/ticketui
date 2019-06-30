@@ -111,7 +111,7 @@ export default {
       ticketid: this.$route.query.id,
       tickets: [],
       fileurl: "",
-      submit_email: "1234@pizza4ps.com",
+      submit_email: "team_hbt@pizza4ps.com",
       commentkey: 0
 
     };
@@ -138,7 +138,7 @@ export default {
     },
     save(formData) {
       // upload data to the server
-      const url = 'https://gasupport.pizza4ps.com:8888/api4/uploadefile/' + this.submit_email
+      const url = 'https://support.pizza4ps.com/hbt/api4/uploadefile/' + this.submit_email
       axios.post( url,
         formData,
         {
@@ -164,7 +164,7 @@ export default {
       this.save(formData);
     },
     closeTicket: function () {
-      axios.post('https://gasupport.pizza4ps.com:8888/api4/close_ticket', {
+      axios.post('https://support.pizza4ps.com/hbt/api4/close_ticket', {
         id: this.ticketid
       }).then(res => {
          this.$router.push("closed-store-tickets");
@@ -174,8 +174,8 @@ export default {
     },
     commentTicket: function () {
       let href = ''; 
-      if (this.fileurl) href = '<br>\nAttachment: <br><a href=' + 'https://gasupport.pizza4ps.com:8888/api4/getfile/' + this.fileurl + '  >' + this.fileurl + '</a>';
-      axios.post('https://gasupport.pizza4ps.com:8888/api4/post_comment', {
+      if (this.fileurl) href = '<br>\nAttachment: <br><a href=' + 'https://support.pizza4ps.com/hbt/api4/getfile/' + this.fileurl + '  >' + this.fileurl + '</a>';
+      axios.post('https://support.pizza4ps.com/hbt/api4/post_comment', {
         id: this.ticketid,
         comment: this.comment + href
       }).then(res => {

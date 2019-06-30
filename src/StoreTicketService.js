@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://support.pizza4ps.com/api4"
+axios.defaults.baseURL = "https://support.pizza4ps.com/hbt/api4"
 
 export default class StoreTicketService {
   listAllOpeningTickets(email, page) {

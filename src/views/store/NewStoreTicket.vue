@@ -108,7 +108,7 @@ export default {
     },
     save(formData) {
       // upload data to the server
-      const url = 'https://gasupport.pizza4ps.com:8888/api4/uploadefile/' + this.submit_email
+      const url = 'https://support.pizza4ps.com/hbt/api4/uploadefile/' + this.submit_email
       axios.post( url,
         formData,
         {
@@ -137,7 +137,7 @@ export default {
       let href = ''; 
       if (this.fileurl) href = '<br>Attachment: <br><a href="' + '/api4/getfile/' + this.fileurl + '">' + this.fileurl + '</a>';
       console.log(href);
-      axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
+      axios.post('https://support.pizza4ps.com/hbt/api4/create_ticket', {
         ticket: {
           summary: this.summary,
           due_date: "",

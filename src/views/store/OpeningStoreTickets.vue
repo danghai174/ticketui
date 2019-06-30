@@ -34,7 +34,7 @@
                   type="success"
                   v-model="defaultPagination"
                   :total="totalPages"
-                  :per-page="3"
+                  :per-page="5"
                   @input="reloadTicketsData($event)"
               ></pagination>
             </login-card>
@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       image: require("@/assets/img/profile_city.jpg"),
-      email: "1234@pizza4ps.com",
+      email: "team_hbt@pizza4ps.com",
       tickets: [],
       defaultPagination: 1,
       totalPages: 6
