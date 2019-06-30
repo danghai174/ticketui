@@ -149,7 +149,7 @@ export default {
         }
       }).then(res => {
         let test = res.data;
-        console.log(test.id);
+        console.log(test[0]['id']);
         this.$router.push("opening-store-tickets");
       }).catch(err => {
         console.log(err);
