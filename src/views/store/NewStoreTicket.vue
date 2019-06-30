@@ -148,7 +148,7 @@ export default {
           c_store_list: this.selectedStore
         }
       }).then(res => {
-        console.log(res.data);
+        console.log(res.data.success);
         this.$router.push("opening-store-tickets");
       }).catch(err => {
         console.log(err);
