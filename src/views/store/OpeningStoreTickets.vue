@@ -17,7 +17,7 @@
                   <div class="comment">
                     <div class="comment-body">
                         <h4 class="comment-heading">
-                          <span v-html="ticket.summary"></span>
+                          <router-link v-bind:to="'/store-ticket?id=' + ticket.id" v-html="ticket.summary"></router-link>
                         <small> {{ticket.created_at}} </small>
                         </h4>
 
@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       image: require("@/assets/img/profile_city.jpg"),
-      email: "abc@pizza4ps.com",
+      email: "1234@pizza4ps.com",
       tickets: [],
       defaultPagination: 1,
       totalPages: 6
