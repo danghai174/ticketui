@@ -136,7 +136,7 @@ export default {
     submitTicket: function () {
       let href = ''; 
       if (this.fileurl) href = '<br>\nAttachment: <br><a href=' + '/api4/getfile/' + this.fileurl + '  >' + this.fileurl + '</a>';
-      console.log(this.fileurl);
+      console.log(href);
       axios.post('https://gasupport.pizza4ps.com:8888/api4/create_ticket', {
         ticket: {
           summary: this.summary,
