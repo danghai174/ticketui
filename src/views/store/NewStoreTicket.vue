@@ -76,18 +76,6 @@ export default {
         {
           id: 2,
           name: "HCM-VVK"
-        },
-        {
-          id: 3,
-          name: "HCM-VVK"
-        },
-        {
-          id: 4,
-          name: "HCM-VVK"
-        },
-        {
-          id: 5,
-          name: "HCM-VVK"
         }
       ],
       summary: "",
