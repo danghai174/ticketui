@@ -13,8 +13,8 @@ export default class StoreTicketService {
       crossdomain: true
     });
   };
-  DetailTicket(id) {
-    return axios.get(`/ticketdetail/${id}`, {
+  DetailTicket(id, page) {
+    return axios.get(`/ticketdetail/${id}/page${page}`, {
       crossdomain: true
     });
   }
