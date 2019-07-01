@@ -136,6 +136,7 @@ export default {
           c_store_list: this.selectedStore
         }
       }).then(res => {
+        console.log(this.submit_email);
         console.log(res.data);
         this.$router.push("/store-ticket?id=" + res.data.success);
       }).catch(err => {
