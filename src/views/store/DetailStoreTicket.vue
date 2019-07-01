@@ -111,7 +111,7 @@ export default {
       ticketid: this.$route.query.id,
       tickets: [],
       fileurl: "",
-      submit_email: "team_hbt@pizza4ps.com",
+      submit_email: "teamhbt@pizza4ps.com",
       commentkey: 0
 
     };

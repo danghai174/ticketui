@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       image: require("@/assets/img/profile_city.jpg"),
-      email: "team_hbt@pizza4ps.com",
+      email: "teamhbt@pizza4ps.com",
       tickets: [],
       defaultPagination: 1,
       totalPages: 6
