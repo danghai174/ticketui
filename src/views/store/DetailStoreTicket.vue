@@ -29,7 +29,7 @@
               >
               </file-upload>
                 <div class="comment-footer">
-                  <md-button href="javascript:void(0)"  :disabled='isDisabled' class="md-success" v-on:click="commentTicket">
+                  <md-button href="javascript:void(0)"  :enabled='isEnaabled' class="md-success" v-on:click="commentTicket">
                     <md-icon>reply</md-icon>Reply
                   </md-button>
                 </div>
@@ -118,7 +118,7 @@ export default {
     };
   },
   computed: {
-  	isDisabled: function(){
+  	isEnabled: function(){
     	return this.buttonstatus;
     }
   },
