@@ -179,7 +179,7 @@ export default {
         id: this.ticketid,
         comment: this.comment + href
       }).then(res => {
-         storeTicketService.DetailTicket(this.ticketid)
+         storeTicketService.DetailTicket(this.ticketid,this.defaultPagination)
           .then(res => {
         this.tickets = res.data;
         var i;
