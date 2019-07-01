@@ -56,7 +56,7 @@
                   @input="reloadTicketcomment($event)"
                 ></pagination>
               </div>
-              <md-button slot="footer" class="md-success" :key="commentkey" v-on:click="closeTicket">Close ticket</md-button>
+              <md-button slot="footer" class="md-success" :key="commentkey" :disabled='isDisabled' v-on:click="closeTicket">Close ticket</md-button>
             </login-card>
           </div>
         </div>
@@ -170,6 +170,7 @@ export default {
       this.save(formData);
     },
     closeTicket: function () {
+      this.buttonstatus = false;
       axios.post('https://support.pizza4ps.com/hbt/api4/close_ticket', {
         id: this.ticketid
       }).then(res => {
@@ -177,6 +178,7 @@ export default {
       }).catch(err => {
         console.log(err);
       });
+      this.buttonstatus = true;
     },
     commentTicket: function () {
       this.buttonstatus = false;
