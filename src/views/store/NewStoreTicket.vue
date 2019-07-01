@@ -84,7 +84,7 @@ export default {
       description: "",
       selectedType: "",
       fileurl: "",
-      submit_email: "1234@pizza4ps.com"
+      submit_email: "team_hbt@pizza4ps.com"
     };
   },
   methods: {
