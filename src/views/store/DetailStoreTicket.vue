@@ -29,7 +29,7 @@
               >
               </file-upload>
                 <div class="comment-footer">
-                  <md-button href="javascript:void(0)" class="md-success" v-on:click="commentTicket">
+                  <md-button href="javascript:void(0)"  :disabled='isDisabled' class="md-success" v-on:click="commentTicket">
                     <md-icon>reply</md-icon>Reply
                   </md-button>
                 </div>
@@ -112,9 +112,15 @@ export default {
       tickets: [],
       fileurl: "",
       submit_email: "teamhbt@pizza4ps.com",
+      buttonstatus: true,
       commentkey: 0
 
     };
+  },
+  computed: {
+  	isDisabled: function(){
+    	return this.buttonstatus;
+    }
   },
   created(){
     storeTicketService.DetailTicket(this.ticketid,this.defaultPagination)
@@ -173,6 +179,7 @@ export default {
       });
     },
     commentTicket: function () {
+      this.buttonstatus = false;
       let href = ''; 
       if (this.fileurl) href = '<br>\nAttachment: <br><a href=' + 'https://support.pizza4ps.com/hbt/api4/getfile/' + this.fileurl + '  >' + this.fileurl + '</a>';
       axios.post('https://support.pizza4ps.com/hbt/api4/post_comment', {
@@ -187,6 +194,7 @@ export default {
           this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
           console.log(this.tickets[i].description);
         }
+        this.buttonstatus = true;
         console.log(this.tickets);
       })
       .catch(err => console.error(err));
