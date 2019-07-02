@@ -32,9 +32,9 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list class="ml-auto">
-              <md-list-item href="/#/new-store-ticket">New ticket</md-list-item>
-              <md-list-item href="/#/opening-store-tickets">Opening tickets</md-list-item>
-              <md-list-item href="/#/closed-store-tickets">Closed tickets</md-list-item>
+              <md-list-item href="/hbt/new-store-ticket">New ticket</md-list-item>
+              <md-list-item href="/hbt/opening-store-tickets">Opening tickets</md-list-item>
+              <md-list-item href="/hbt/closed-store-tickets">Closed tickets</md-list-item>
             </md-list>
           </div>
         </div>
