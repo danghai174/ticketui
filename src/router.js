@@ -40,41 +40,39 @@ export default new Router({
       components: { default: NewStoreTicket, header: MainNavbar },
       props: {
         header: { colorOnScroll: 400, navbarTransparent: true }
-      },
-      children: [
-            {
-              path: "/new-store-ticket",
-              name: "new-store-ticket",
-              components: { default: NewStoreTicket, header: MainNavbar },
-              props: {
-                header: { colorOnScroll: 400, navbarTransparent: true }
-              }
-            },
-            {
-              path: "/opening-store-tickets",
-              name: "opening-store-tickets",
-              components: { default: OpeningStoreTickets, header: MainNavbar },
-              props: {
-                header: { colorOnScroll: 400, navbarTransparent: true }
-              }
-            },
-            {
-              path: "/closed-store-tickets",
-              name: "closed-store-tickets",
-              components: { default: ClosedStoreTickets, header: MainNavbar },
-              props: {
-                header: { colorOnScroll: 400, navbarTransparent: true }
-              }
-            },
-            {
-              path: "/store-ticket",
-              name: "store-ticket",
-              components: { default: DetailStoreTicket, header: MainNavbar },
-              props: {
-                header: { colorOnScroll: 400, navbarTransparent: true }
-              }
-            }
-      ]
+      }
+    },
+    {
+      path: "/new-store-ticket",
+      name: "new-store-ticket",
+      components: { default: NewStoreTicket, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400, navbarTransparent: true }
+      }
+    },
+    {
+      path: "/opening-store-tickets",
+      name: "opening-store-tickets",
+      components: { default: OpeningStoreTickets, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400, navbarTransparent: true }
+      }
+    },
+    {
+      path: "/closed-store-tickets",
+      name: "closed-store-tickets",
+      components: { default: ClosedStoreTickets, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400, navbarTransparent: true }
+      }
+    },
+    {
+      path: "/store-ticket",
+      name: "store-ticket",
+      components: { default: DetailStoreTicket, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400, navbarTransparent: true }
+      }
     }
   ],
   scrollBehavior: to => {
