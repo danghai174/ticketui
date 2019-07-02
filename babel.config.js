@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/hbt',
+  publicPath: 'hbt/',
   presets: ["@vue/app"],
   plugins: [
     [
