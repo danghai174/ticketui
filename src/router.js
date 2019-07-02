@@ -43,7 +43,7 @@ export default new Router({
       }
     },
     {
-      path: "/hbt/new-store-ticket",
+      path: "/new-store-ticket",
       name: "new-store-ticket",
       components: { default: NewStoreTicket, header: MainNavbar },
       props: {
@@ -51,7 +51,7 @@ export default new Router({
       }
     },
     {
-      path: "/hbt/opening-store-tickets",
+      path: "/opening-store-tickets",
       name: "opening-store-tickets",
       components: { default: OpeningStoreTickets, header: MainNavbar },
       props: {
@@ -59,7 +59,7 @@ export default new Router({
       }
     },
     {
-      path: "/hbt/closed-store-tickets",
+      path: "/closed-store-tickets",
       name: "closed-store-tickets",
       components: { default: ClosedStoreTickets, header: MainNavbar },
       props: {
@@ -67,7 +67,7 @@ export default new Router({
       }
     },
     {
-      path: "/hbt/store-ticket",
+      path: "/store-ticket",
       name: "store-ticket",
       components: { default: DetailStoreTicket, header: MainNavbar },
       props: {
