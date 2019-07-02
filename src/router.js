@@ -43,157 +43,7 @@ export default new Router({
       }
     },
     {
-      path: "/sections",
-      name: "sections",
-      components: { default: Sections, header: MainNavbar },
-      props: {
-        header: { colorOnScroll: 0, navbarTransparent: false }
-      }
-    },
-    {
-      path: "/presentation",
-      name: "presentation",
-      components: {
-        default: Presentation,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true },
-        footer: { type: "white" }
-      }
-    },
-    {
-      path: "/about-us",
-      name: "about-us",
-      components: { default: AboutUs, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/blog-post",
-      name: "blog-post",
-      components: { default: BlogPost, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/blog-posts",
-      name: "blog-posts",
-      components: {
-        default: BlogPosts,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/contact-us",
-      name: "contact-us",
-      components: {
-        default: ContactUs,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 0, navbarTransparent: false, type: "dark" }
-      }
-    },
-    {
-      path: "/pricing-page",
-      name: "pricing-page",
-      components: {
-        default: Pricing,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/shopping-cart",
-      name: "shopping-cart",
-      components: {
-        default: Shopping,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/ecommerce-page",
-      name: "ecommerce-page",
-      components: {
-        default: Ecommerce,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true },
-        footer: { type: "black", size: "big" }
-      }
-    },
-    {
-      path: "/product-page",
-      name: "product-page",
-      components: {
-        default: Product,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/landing-page",
-      name: "landing",
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/login-page",
-      name: "login",
-      components: { default: Login, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/profile-page",
-      name: "profile",
-      components: { default: Profile, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/signup-page",
-      name: "signup",
-      components: { default: Signup, header: MainNavbar },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/error-page",
-      name: "error",
-      components: { default: Error, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
-      }
-    },
-    {
-      path: "/new-store-ticket",
+      path: "/hbt/new-store-ticket",
       name: "new-store-ticket",
       components: { default: NewStoreTicket, header: MainNavbar },
       props: {
@@ -201,7 +51,7 @@ export default new Router({
       }
     },
     {
-      path: "/opening-store-tickets",
+      path: "/hbt/opening-store-tickets",
       name: "opening-store-tickets",
       components: { default: OpeningStoreTickets, header: MainNavbar },
       props: {
@@ -209,7 +59,7 @@ export default new Router({
       }
     },
     {
-      path: "/closed-store-tickets",
+      path: "/hbt/closed-store-tickets",
       name: "closed-store-tickets",
       components: { default: ClosedStoreTickets, header: MainNavbar },
       props: {
@@ -217,7 +67,7 @@ export default new Router({
       }
     },
     {
-      path: "/store-ticket",
+      path: "/hbt/store-ticket",
       name: "store-ticket",
       components: { default: DetailStoreTicket, header: MainNavbar },
       props: {
