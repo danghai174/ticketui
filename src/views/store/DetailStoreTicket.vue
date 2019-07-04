@@ -25,6 +25,7 @@
                 btn-icon="attach_file"
                 slot="inputs"
                 with-button
+                ref="fileUpload"
                 @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
               >
               </file-upload>
@@ -162,7 +163,6 @@ export default {
     },
     onFileChange(fieldName, fileList) {
       console.log("File changed in parent");
-      console.log(fileList);
       // handle file changes
       const formData = new FormData();
       if (!fileList.length) return;
@@ -196,10 +196,12 @@ export default {
         var i;
         for (i = 0; i < this.tickets.length; i++) { 
           this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
-          console.log(this.tickets[i].description);
         }
         this.buttonstatus = true;
         console.log(this.tickets);
+      })
+      .then(rest => {
+         this.comment = "";
       })
       .catch(err => console.error(err));
       })
