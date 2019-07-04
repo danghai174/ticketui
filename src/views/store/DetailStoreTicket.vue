@@ -144,6 +144,7 @@ export default {
     },
     save(formData) {
       // upload data to the server
+      this.buttonstatus = false;
       const url = 'https://support.pizza4ps.com/hbt/api4/uploadefile/' + this.submit_email
       axios.post( url,
         formData,
@@ -157,9 +158,9 @@ export default {
       .catch(err => {
         console.log(err)
       });
+      this.buttonstatus = true;
     },
     onFileChange(fieldName, fileList) {
-      this.buttonstatus = false;
       console.log("File changed in parent");
       console.log(fileList);
       // handle file changes
@@ -169,7 +170,6 @@ export default {
       formData.append(fieldName,fileList[0])
       // save it
       this.save(formData);
-       this.buttonstatus = true;
     },
     closeTicket: function () {
       this.buttonstatus = false;

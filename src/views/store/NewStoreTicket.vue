@@ -9,14 +9,14 @@
             <login-card header-color="green">
               <h4 slot="title" class="card-title">Store ticket</h4>
               <md-field slot="inputs">
-                <label for="movie">Choose Store (*)</label>
-                <md-select @change="selectstore($event)" v-model="selectedStore" tname="store" id="store">
+                <label for="movie">Department (*)</label>
+                <md-select @change="selectdepartment($event)" v-model="selectedDepartment" tname="dept" id="dept">
                   <md-option
-                    :value="store.name"
-                    v-for="(store, index) in stores"
-                    :item="store"
+                    :value="dept.name"
+                    v-for="(dept, index) in depts"
+                    :item="dept"
                     :key="index"
-                  >{{ store.name }}</md-option>
+                  >{{ dept.name }}</md-option>
                 </md-select>
               </md-field>
               <md-field slot="inputs">
@@ -68,19 +68,20 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
-      stores: [
+      depts: [
         {
           id: 1,
-          name: "HCM-HBT"
+          name: "IT"
         },
         {
           id: 2,
-          name: "HCM-VVK"
+          name: "SCM"
         }
       ],
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
-      selectedStore: "",
+      selectedStore: "HCM-HBT",
+      selectedDept: "",
       description: "",
       selectedType: "",
       fileurl: "",
@@ -94,14 +95,15 @@ export default {
     }
   },
   methods: {
-    selectstore: function() {
-        this.selectedStore = this.value
+    selectdepartment: function() {
+        this.selectedDepartment = this.value
     },
     selecttype: function() {
         this.selectedType = this.value
     },
     save(formData) {
       // upload data to the server
+      this.buttonstatus = false;
       const url = 'https://support.pizza4ps.com/hbt/api4/uploadefile/' + this.submit_email
       axios.post( url,
         formData,
@@ -115,9 +117,9 @@ export default {
       .catch(err => {
         console.log(err)
       });
+      this.buttonstatus = true;
     },
     onFileChange(fieldName, fileList) {
-      this.buttonstatus = false;
       console.log("File changed in parent");
       console.log(fileList);
       // handle file changes
@@ -127,7 +129,6 @@ export default {
       formData.append(fieldName,fileList[0])
       // save it
       this.save(formData);
-      this.buttonstatus = true;
     },
     submitTicket: function () {
       let href = ''; 
