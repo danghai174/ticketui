@@ -162,7 +162,7 @@ export default {
       this.buttonstatus = true;
     },
     onFileChange(fieldName, fileList) {
-      console.log("File changed in parent");
+      console.log(this.$refs.fileUpload);
       // handle file changes
       const formData = new FormData();
       if (!fileList.length) return;
