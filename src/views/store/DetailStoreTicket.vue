@@ -163,7 +163,6 @@ export default {
     },
     onFileChange(fieldName, fileList) {
       // handle file changes
-      console.log(this.$refs.fileUpload);
       const formData = new FormData();
       if (!fileList.length) return;
       // append the file to FormData
@@ -199,6 +198,8 @@ export default {
         }
         this.buttonstatus = true;
         console.log(this.tickets);
+        console.log(this.$refs.fileUpload);
+        this.$refs.fileUpload.removeImage();
       })
       .then(rest => {
          this.comment = "";
