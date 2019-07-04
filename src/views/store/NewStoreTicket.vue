@@ -45,7 +45,7 @@
                 @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
               >
               </file-upload>
-              <md-button slot="footer" class="md-success" v-on:click="submitTicket">Submit</md-button>
+              <md-button slot="footer" class="md-success" :disabled='isDisabled' v-on:click="submitTicket">Submit</md-button>
             </login-card>
           </div>
         </div>
@@ -84,8 +84,14 @@ export default {
       description: "",
       selectedType: "",
       fileurl: "",
+      buttonstatus: true,
       submit_email: "teamhbt@pizza4ps.com"
     };
+  },
+  computed: {
+  	isDisabled: function(){
+    	return !this.buttonstatus;
+    }
   },
   methods: {
     selectstore: function() {
@@ -111,6 +117,7 @@ export default {
       });
     },
     onFileChange(fieldName, fileList) {
+      this.buttonstatus = false;
       console.log("File changed in parent");
       console.log(fileList);
       // handle file changes
@@ -120,10 +127,11 @@ export default {
       formData.append(fieldName,fileList[0])
       // save it
       this.save(formData);
+      this.buttonstatus = true;
     },
     submitTicket: function () {
       let href = ''; 
-      if (this.fileurl) href = '<br>Attachment: <br><a href="' + '/api4/getfile/' + this.fileurl + '">' + this.fileurl + '</a>';
+      if (this.fileurl) href = '<br>Attachment: <br><a href="' + '/hbt/api4/getfile/' + this.fileurl + '">' + this.fileurl + '</a>';
       console.log(href);
       axios.post('https://support.pizza4ps.com/hbt/api4/create_ticket', {
         ticket: {
