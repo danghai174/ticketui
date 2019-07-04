@@ -25,6 +25,7 @@
                 btn-icon="attach_file"
                 slot="inputs"
                 with-button
+                ref="fileUpload"
                 @fileHasChanged="onFileChange($event.target.name, $event.target.files)"
               >
               </file-upload>
@@ -162,6 +163,7 @@ export default {
     },
     onFileChange(fieldName, fileList) {
       // handle file changes
+      console.log(this.$refs.fileUpload);
       const formData = new FormData();
       if (!fileList.length) return;
       // append the file to FormData
