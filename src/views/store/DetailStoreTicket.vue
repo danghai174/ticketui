@@ -197,14 +197,13 @@ export default {
           this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
         }
         this.buttonstatus = true;
-        console.log(this.tickets);
+        /* console.log(this.tickets); */
         this.comment = "";
         console.log(this.$refs.fileUpload.onFileChange());
         this.$refs.fileUpload.onFileChange(null, null);
         this.href = '';
-        console.log("fileurl" + this.fileurl);
       })
-      .then(rest => {
+      .then(res => {
         console.log("fileurl" + this.fileurl);
       })
       .catch(err => console.error(err));
