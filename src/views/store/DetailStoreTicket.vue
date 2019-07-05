@@ -200,6 +200,10 @@ export default {
         console.log(this.tickets);
         console.log(this.$refs.fileUpload);
         this.$refs.fileUpload.removeImage();
+        this.$refs.fileUpload.hasImage = false;
+        this.$refs.fileUpload.inputModel = null;
+        this.fileurl = "";
+
       })
       .then(rest => {
          this.comment = "";
