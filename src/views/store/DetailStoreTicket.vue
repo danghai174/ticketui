@@ -202,10 +202,9 @@ export default {
       .then(rest => {
         this.comment = "";
         console.log(this.$refs.fileUpload);
-        this.$refs.fileUpload.removeImage();
-        this.$refs.fileUpload.hasImage = false;
-        this.$refs.fileUpload.inputModel = null;
+        this.$refs.fileUpload.onFileChange(null, null);
         this.fileurl = "";
+        console.log(this.fileurl);
       })
       .catch(err => console.error(err));
       })
