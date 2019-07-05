@@ -200,7 +200,7 @@ export default {
         /* console.log(this.tickets); */
         this.comment = "";
         console.log(this.$refs.fileUpload);
-        console.log(this.$refs.fileUpload.onFileChange(null, null));
+        console.log(this.$refs.fileUpload.removeImage());
         this.href = "";
         this.fileurl = "";
       })

@@ -39,6 +39,7 @@
             :placeholder="placeholder"
           ></md-input>
           <input
+            v-if="uploadReady"
             type="file"
             :id="inputName + 'Hidden'"
             name="file"
@@ -57,6 +58,7 @@
               :placeholder="placeholder"
             ></md-input>
             <input
+              v-if="uploadReady"
               type="file"
               name="file"
               :id="inputName + 'Hidden'"
@@ -99,6 +101,7 @@ export default {
   },
   data() {
     return {
+      uploadReady = true,
       inputModel: null,
       inputModel2: null,
       imageRegular: require("@/assets/img/image_placeholder.jpg"),
@@ -132,6 +135,7 @@ export default {
         this.imageRegular = require("@/assets/img/image_placeholder.jpg");
       }
       this.hasImage = false;
+      this.uploadReady = false;
     },
     triggerInputFileHidden(hiddenID) {
       let element = document.getElementById(hiddenID);
