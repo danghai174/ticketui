@@ -125,6 +125,7 @@ export default {
       vm.hasImage = true;
     },
     removeImage: function() {
+       console.log("File removed");
       if (this.type === "image-circle") {
         this.imageCircle = require("@/assets/img/placeholder.jpg");
       } else {
