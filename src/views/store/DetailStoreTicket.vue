@@ -198,12 +198,13 @@ export default {
         }
         this.buttonstatus = true;
         console.log(this.tickets);
-      })
-      .then(rest => {
         this.comment = "";
         console.log(this.$refs.fileUpload.onFileChange());
         this.$refs.fileUpload.onFileChange(null, null);
         this.href = '';
+        console.log("fileurl" + this.fileurl);
+      })
+      .then(rest => {
         console.log("fileurl" + this.fileurl);
       })
       .catch(err => console.error(err));
