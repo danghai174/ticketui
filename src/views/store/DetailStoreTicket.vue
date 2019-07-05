@@ -19,6 +19,7 @@
                   <md-textarea v-model="comment"></md-textarea>
                 </md-field>
                 <file-upload
+                v-if="uploadReady"
                 type="input"
                 placeholder="Select file"
                 input-name="attachment"
@@ -105,6 +106,7 @@ export default {
           name: "HCM-VVK"
         }
       ],
+      uploadReady: true,
       defaultPagination: 1,
       Summary: "",
       image: require("@/assets/img/profile_city.jpg"),
@@ -201,6 +203,10 @@ export default {
         this.comment = "";
         console.log(this.$refs.fileUpload);
         console.log(this.$refs.fileUpload.removeImage());
+        this.uploadReady = false;
+        this.$nextTick(() => {
+        	this.uploadReady = true
+        });       
         this.href = "";
         this.fileurl = "";
       })
