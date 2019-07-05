@@ -114,6 +114,7 @@ export default {
       fileurl: "",
       submit_email: "teamhbt@pizza4ps.com",
       buttonstatus: true,
+      href: "",
       commentkey: 0
 
     };
@@ -183,11 +184,10 @@ export default {
     },
     commentTicket: function () {
       this.buttonstatus = false;
-      let href = ''; 
-      if (this.fileurl) href = '<br>\nAttachment: <br><a href=' + 'https://support.pizza4ps.com/hbt/api4/getfile/' + this.fileurl + '  >' + this.fileurl + '</a>';
+      if (this.fileurl) this.href = '<br>\nAttachment: <br><a href=' + 'https://support.pizza4ps.com/hbt/api4/getfile/' + this.fileurl + '  >' + this.fileurl + '</a>';
       axios.post('https://support.pizza4ps.com/hbt/api4/post_comment', {
         id: this.ticketid,
-        comment: this.comment + href
+        comment: this.comment + this.href
       }).then(res => {
          storeTicketService.DetailTicket(this.ticketid,this.defaultPagination)
           .then(res => {
@@ -201,9 +201,9 @@ export default {
       })
       .then(rest => {
         this.comment = "";
-        console.log(this.$refs.fileUpload);
+        console.log(this.$refs.fileUpload.onFileChange());
         this.$refs.fileUpload.onFileChange(null, null);
-        href = '';
+        this.href = '';
         console.log("fileurl" + this.fileurl);
       })
       .catch(err => console.error(err));
