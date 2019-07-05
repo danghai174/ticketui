@@ -132,7 +132,6 @@ export default {
         this.imageRegular = require("@/assets/img/image_placeholder.jpg");
       }
       this.hasImage = false;
-      this.placeholder = "Select file";
     },
     triggerInputFileHidden(hiddenID) {
       let element = document.getElementById(hiddenID);
