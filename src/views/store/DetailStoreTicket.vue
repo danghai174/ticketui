@@ -203,8 +203,8 @@ export default {
         this.comment = "";
         console.log(this.$refs.fileUpload);
         this.$refs.fileUpload.onFileChange(null, null);
-        this.fileurl = "";
-        console.log(this.fileurl);
+        href = '';
+        console.log("fileurl" + this.fileurl);
       })
       .catch(err => console.error(err));
       })
