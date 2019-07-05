@@ -201,8 +201,8 @@ export default {
         this.comment = "";
         console.log(this.$refs.fileUpload);
         console.log(this.$refs.fileUpload.removeImage());
-        this.href = '';
-        this.fileurl = '';
+        this.href = "";
+        this.fileurl = "";
       })
       .then(res => {
         console.log("fileurl" + this.fileurl);
