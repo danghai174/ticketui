@@ -199,8 +199,7 @@ export default {
         this.buttonstatus = true;
         /* console.log(this.tickets); */
         this.comment = "";
-        console.log(this.$refs.fileUpload.onFileChange());
-        this.$refs.fileUpload.onFileChange(null, null);
+        console.log(this.$refs.fileUpload.removeImage());
         this.href = '';
       })
       .then(res => {
