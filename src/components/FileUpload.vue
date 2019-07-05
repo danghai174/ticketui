@@ -101,7 +101,7 @@ export default {
   },
   data() {
     return {
-      uploadReady = true,
+      uploadReady: true,
       inputModel: null,
       inputModel2: null,
       imageRegular: require("@/assets/img/image_placeholder.jpg"),
