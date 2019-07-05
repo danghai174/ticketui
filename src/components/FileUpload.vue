@@ -125,13 +125,14 @@ export default {
       vm.hasImage = true;
     },
     removeImage: function() {
-       console.log("File removed");
+      console.log("File removed");
       if (this.type === "image-circle") {
         this.imageCircle = require("@/assets/img/placeholder.jpg");
       } else {
         this.imageRegular = require("@/assets/img/image_placeholder.jpg");
       }
       this.hasImage = false;
+      this.inputModel = null;
     },
     triggerInputFileHidden(hiddenID) {
       let element = document.getElementById(hiddenID);
