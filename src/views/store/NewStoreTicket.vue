@@ -24,6 +24,8 @@
                 <md-select  @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
                   <md-option value="POS">POS</md-option>
                   <md-option value="IT Devices">IT Devices</md-option>
+                  <md-option value="Network">Network</md-option>
+                  <md-option value="Purchasing Request">Purchasing Request</md-option>
                 </md-select>
               </md-field>
               <md-field slot="inputs">
