@@ -135,8 +135,6 @@ export default {
           this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
           console.log(this.tickets[i].description);
         }
-        console.log(this.tickets);
-        console.log(this.$route.query.id);
       })
       .catch(err => console.error(err));
   },
@@ -223,13 +221,7 @@ export default {
       storeTicketService.DetailTicket(this.ticketid,page)
         .then(res => {
           this.tickets = res.data;
-          var i;
-          for (i = 0; i < this.tickets.length; i++) { 
-            this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
-            console.log(this.tickets[i].description);
-          }
           console.log(this.tickets);
-          console.log(this.$route.query.id);
         })
         .catch(err => console.error(err)); 
       }
