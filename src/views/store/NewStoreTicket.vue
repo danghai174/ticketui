@@ -134,7 +134,8 @@ export default {
   },
   methods: {
     selectdepartment: function() {
-        this.selectedDepartment = this.value
+        this.selectedDepartment = this.value;
+        this.selectedType = "updated";
     },
     selecttype: function() {
         this.selectedType = this.value
