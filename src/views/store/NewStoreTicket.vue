@@ -21,10 +21,6 @@
               </md-field>
               <md-field slot="inputs">
                 <label for="movie">Store Ticket Type (*)</label>
-                <md-select v-if="selectedDepartment == ''" @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
-                  <md-option
-                  ></md-option>
-                </md-select>
                 <md-select v-if="selectedDepartment == 'IT'" @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
                   <md-option
                     :value="type.name"
