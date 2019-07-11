@@ -120,7 +120,7 @@ export default {
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       selectedStore: "HCM-HBT",
-      selectedDept: "",
+      selectedDepartment: "",
       description: "",
       selectedType: "",
       fileurl: "",
