@@ -21,11 +21,25 @@
               </md-field>
               <md-field slot="inputs">
                 <label for="movie">Store Ticket Type (*)</label>
-                <md-select  @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
-                  <md-option value="POS">POS</md-option>
-                  <md-option value="IT Devices">IT Devices</md-option>
-                  <md-option value="Network">Network</md-option>
-                  <md-option value="Purchasing Request">Purchasing Request</md-option>
+                <md-select v-if="selectedDepartment == ''" @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
+                  <md-option
+                  ></md-option>
+                </md-select>
+                <md-select v-if="selectedDepartment == 'IT'" @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
+                  <md-option
+                    :value="type.name"
+                    v-for="(type, index) in types.it"
+                    :item="type"
+                    :key="index"
+                  >{{ type.name }}</md-option>
+                </md-select>
+                <md-select v-if="selectedDepartment == 'SCM'" @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
+                  <md-option
+                    :value="type.name"
+                    v-for="(type, index) in types.scm"
+                    :item="type"
+                    :key="index"
+                  >{{ type.name }}</md-option>
                 </md-select>
               </md-field>
               <md-field slot="inputs">
@@ -80,6 +94,32 @@ export default {
           name: "SCM"
         }
       ],
+      types: {
+        it: [
+        {
+          id: 1,
+          name: "Issues"
+        },
+        {
+          id: 2,
+          name: "Requests"
+        }
+        ],
+        scm: [
+        {
+          id: 1,
+          name: "Top_urgent_24h"
+        },
+        {
+          id: 2,
+          name: "Priority_72h"
+        }
+        {
+          id: 3,
+          name: "Regular_1week"
+        }
+        ]
+      },
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       selectedStore: "HCM-HBT",
