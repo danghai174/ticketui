@@ -37,6 +37,7 @@
                     :key="index"
                   >{{ type.name }}</md-option>
                 </md-select>
+              </md-field>
               <md-field slot="inputs">
                 <label>Summary (*)</label>
                 <md-input v-model="summary"></md-input>
