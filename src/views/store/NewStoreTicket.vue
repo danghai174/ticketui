@@ -23,14 +23,14 @@
                 <label for="movie">Store Ticket Type (*)</label>
                 <md-select @change="selecttype($event)" key="ticketType" v-model="selectedType" name="ticketType" id="ticketType">
                   <md-option
-                    v-if="this.selectedDepartment == 'IT'"
+                    v-if="selectedDepartment == 'IT'"
                     :value="type.name"
                     v-for="(type, index) in types.it"
                     :item="type"
                     :key="index"
                   >{{ type.name }}</md-option>
                   <md-option
-                    v-if="this.selectedDepartment == 'SCM'"
+                    v-if="selectedDepartment == 'SCM'"
                     :value="type.name"
                     v-for="(type, index) in types.scm"
                     :item="type"
