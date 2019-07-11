@@ -113,7 +113,7 @@ export default {
         {
           id: 2,
           name: "Priority_72h"
-        }
+        },
         {
           id: 3,
           name: "Regular_1week"
