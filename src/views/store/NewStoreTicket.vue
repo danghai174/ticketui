@@ -28,14 +28,14 @@
                     v-for="(type, index) in types.it"
                     :item="type"
                     :key="index"
-                  >{{ type.name }}</md-option>
+                  >IT-{{ type.name }}</md-option>
                   <md-option
                     v-if="selectedDepartment == 'SCM'"
                     :value="type.name"
                     v-for="(type, index) in types.scm"
                     :item="type"
                     :key="index"
-                  >{{ type.name }}</md-option>
+                  >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
               <md-field slot="inputs">
