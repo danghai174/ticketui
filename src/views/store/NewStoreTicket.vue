@@ -21,7 +21,7 @@
               </md-field>
               <md-field slot="inputs">
                 <label for="movie">Store Ticket Type (*)</label>
-                <md-select @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
+                <md-select @change="selecttype($event)" key="ticketType" v-model="selectedType" name="ticketType" id="ticketType">
                   <md-option
                     v-if="selectedDepartment == 'IT'"
                     :value="type.name"
@@ -116,6 +116,7 @@ export default {
         }
         ]
       },
+      ticketType: "",
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       selectedStore: "HCM-HBT",
@@ -135,7 +136,7 @@ export default {
   methods: {
     selectdepartment: function() {
         this.selectedDepartment = this.value;
-        this.selectedType = "updated";
+        this.ticketType = this.value;
     },
     selecttype: function() {
         this.selectedType = this.value
