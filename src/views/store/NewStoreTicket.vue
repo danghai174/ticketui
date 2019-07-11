@@ -135,10 +135,9 @@ export default {
   },
   methods: {
     selectdepartment: function() {
-        console.log(this.value);
         this.selectedDepartment = this.value;
         this.ticketType = this.value;
-        console.log(this.ticketType);
+        this.selectedType = "";
     },
     selecttype: function() {
         this.selectedType = this.value
