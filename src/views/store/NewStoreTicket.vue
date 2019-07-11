@@ -21,23 +21,22 @@
               </md-field>
               <md-field slot="inputs">
                 <label for="movie">Store Ticket Type (*)</label>
-                <md-select v-if="selectedDepartment == 'IT'" @change="selecttype($event)" v-model="selectedType" name="ticketTypeIT" id="ticketTypeIT">
+                <md-select @change="selecttype($event)" v-model="selectedType" name="ticketType" id="ticketType">
                   <md-option
+                    v-if="selectedDepartment == 'IT'"
                     :value="type.name"
                     v-for="(type, index) in types.it"
                     :item="type"
                     :key="index"
                   >{{ type.name }}</md-option>
-                </md-select>
-                <md-select v-if="selectedDepartment == 'SCM'" @change="selecttype($event)" v-model="selectedType" name="ticketTypeSCM" id="ticketTypeSCM">
                   <md-option
+                    v-if="selectedDepartment == 'SCM'"
                     :value="type.name"
                     v-for="(type, index) in types.scm"
                     :item="type"
                     :key="index"
                   >{{ type.name }}</md-option>
                 </md-select>
-              </md-field>
               <md-field slot="inputs">
                 <label>Summary (*)</label>
                 <md-input v-model="summary"></md-input>
