@@ -11,7 +11,7 @@
               <h5
                 slot="inputs"
               >
-              <span v-html="tickets[0].description"></span>
+              <span v-html="ticket.description"></span>
               </h5>
               <div class="comment-area" slot="inputs">
                 <md-field maxlength="5">
@@ -36,13 +36,13 @@
                   </md-button>
                 </div>
                 <div class="comment" 
-                                  v-for="(comment, index) in tickets[0].public_comments"
+                                  v-for="(comment, index) in ticket.public_comments"
                   :item="comment"
                   :key="index"
                 >
                   <div class="comment-body">
                     <h4 class="comment-heading">
-                      {{comment.creator.email}}
+                      {{comment.creator}}
                       <small> {{comment.created_at}}</small>
                     </h4>
 
@@ -112,7 +112,7 @@ export default {
       image: require("@/assets/img/profile_city.jpg"),
       comment: "",
       ticketid: this.$route.query.id,
-      tickets: [],
+      ticket: null,
       fileurl: "",
       submit_email: "teamhbt@pizza4ps.com",
       buttonstatus: true,
@@ -129,12 +129,9 @@ export default {
   created(){
     storeTicketService.DetailTicket(this.ticketid,this.defaultPagination)
       .then(res => {
-        this.tickets = res.data;
-        var i;
-        for (i = 0; i < this.tickets.length; i++) { 
-          this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
-          console.log(this.tickets[i].description);
-        }
+        this.ticket = res.data;
+        this.ticket.description = this.decodeHTML(this.ticket.description);
+        console.log(this.ticket.description);
       })
       .catch(err => console.error(err));
   },
@@ -221,7 +218,13 @@ export default {
       storeTicketService.DetailTicket(this.ticketid,page)
         .then(res => {
           this.tickets = res.data;
+          var i;
+          for (i = 0; i < this.tickets.length; i++) { 
+            this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
+            console.log(this.tickets[i].description);
+          }
           console.log(this.tickets);
+          console.log(this.$route.query.id);
         })
         .catch(err => console.error(err)); 
       }
