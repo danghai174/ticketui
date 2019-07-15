@@ -131,7 +131,7 @@ export default {
       .then(res => {
         this.ticket = res.data;
         this.ticket.description = this.decodeHTML(this.ticket.description);
-        console.log(this.ticket.description);
+        console.log(this.ticket);
       })
       .catch(err => console.error(err));
   },
@@ -188,11 +188,8 @@ export default {
       }).then(res => {
          storeTicketService.DetailTicket(this.ticketid,this.defaultPagination)
           .then(res => {
-        this.tickets = res.data;
-        var i;
-        for (i = 0; i < this.tickets.length; i++) { 
-          this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
-        }
+        this.ticket = res.data;
+        this.ticket.description = this.decodeHTML(this.ticket.description);
         this.buttonstatus = true;
         /* console.log(this.tickets); */
         this.comment = "";
@@ -217,13 +214,9 @@ export default {
     reloadTicketcomment(page) {
       storeTicketService.DetailTicket(this.ticketid,page)
         .then(res => {
-          this.tickets = res.data;
-          var i;
-          for (i = 0; i < this.tickets.length; i++) { 
-            this.tickets[i].description = this.decodeHTML(this.tickets[i].description);
-            console.log(this.tickets[i].description);
-          }
-          console.log(this.tickets);
+          this.ticket = res.data;
+          this.ticket.description = this.decodeHTML(this.ticket.description);
+          console.log(this.ticket);
           console.log(this.$route.query.id);
         })
         .catch(err => console.error(err)); 
