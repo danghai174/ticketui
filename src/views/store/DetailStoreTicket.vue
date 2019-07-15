@@ -112,7 +112,9 @@ export default {
       image: require("@/assets/img/profile_city.jpg"),
       comment: "",
       ticketid: this.$route.query.id,
-      ticket: "",
+      ticket: {
+          description: ""
+      },
       fileurl: "",
       submit_email: "teamhbt@pizza4ps.com",
       buttonstatus: true,
