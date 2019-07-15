@@ -129,6 +129,7 @@ export default {
   created(){
     storeTicketService.DetailTicket(this.ticketid,this.defaultPagination)
       .then(res => {
+        console.log(res.data);
         this.ticket = res.data;
         this.ticket.description = this.decodeHTML(this.ticket.description);
         console.log(this.ticket);
