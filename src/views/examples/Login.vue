@@ -68,7 +68,7 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
-      image: require("@/assets/img/profile_city.jpg"),
+      image: require("@/assets/img/4ps_food.jpg"),
       firstname: null,
       email: null,
       password: null
