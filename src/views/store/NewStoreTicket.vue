@@ -38,6 +38,25 @@
                   >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
+              <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
+                <label for="movie">Problem Location (*)</label>
+                <md-select @change="selecttype($event)" key="ticketType" v-model="selectedType" name="ticketType" id="ticketType">
+                  <md-option
+                    v-if="selectedDepartment == 'GA'"
+                    :value="type.name"
+                    v-for="(type, index) in types.it"
+                    :item="type"
+                    :key="index"
+                  >GA-{{ type.name }}</md-option>
+                  <md-option
+                    v-if="selectedDepartment == 'SCM'"
+                    :value="type.name"
+                    v-for="(type, index) in types.scm"
+                    :item="type"
+                    :key="index"
+                  >SCM-{{ type.name }}</md-option>
+                </md-select>
+              </md-field>
               <md-field slot="inputs">
                 <label>Summary (*)</label>
                 <md-input v-model="summary"></md-input>
