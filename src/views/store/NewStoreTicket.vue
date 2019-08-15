@@ -107,6 +107,10 @@ export default {
         {
           id: 2,
           name: "SCM"
+        },
+        {
+          id: 3,
+          name: "GA"
         }
       ],
       types: {
