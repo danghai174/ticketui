@@ -58,7 +58,7 @@
                 </md-select>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
-              <v-md-date-range-picker></v-md-date-range-picker>
+              <vuejs-datepicker></vuejs-datepicker>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <div class="flex-column">
@@ -98,14 +98,14 @@
 import { LoginCard, FileUpload } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 import axios from 'axios';
-import VMdDateRangePicker from "v-md-date-range-picker";
+import Datepicker from 'vuejs-datepicker';
 
 export default {
   mixins: [Mixins.HeaderImage],
   components: {
     LoginCard,
     FileUpload,
-    VMdDateRangePicker
+    Datepicker
   },
   bodyClass: "login-page",
   data() {
