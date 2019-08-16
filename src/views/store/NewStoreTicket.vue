@@ -57,7 +57,9 @@
                   >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
-              <md-checkbox  v-model="ga_outofoperationhour">Out of operation hour</md-checkbox>
+              <span>
+                 <md-checkbox  v-model="ga_outofoperationhour">Out of operation hour</md-checkbox>
+              </span> 
               <md-field slot="inputs">
                 <label>Summary (*)</label>
                 <md-input v-model="summary"></md-input>
