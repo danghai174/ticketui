@@ -57,7 +57,9 @@
                   >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
+              <div class="flex-column">
               <md-checkbox v-if="selectedDepartment == 'GA'" v-model="ga_outofoperationhour">Out of operation hour</md-checkbox>
+              </div>
               <md-field slot="inputs">
                 <label>Summary (*)</label>
                 <md-input v-model="summary"></md-input>
