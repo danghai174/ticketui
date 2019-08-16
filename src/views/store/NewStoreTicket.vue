@@ -58,7 +58,7 @@
                 </md-select>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
-              <vuejs-datepicker></vuejs-datepicker>
+              <datepicker :format="format"></datepicker>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <div class="flex-column">
@@ -98,7 +98,7 @@
 import { LoginCard, FileUpload } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 import axios from 'axios';
-import Datepicker from 'vuejs-datepicker';
+import * as VueDatepicker from '@livelybone/vue-datepicker';
 
 export default {
   mixins: [Mixins.HeaderImage],
