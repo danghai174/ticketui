@@ -43,6 +43,14 @@ export default new Router({
       }
     },
     {
+      path: "/test",
+      name: "test",
+      components: { default: Index, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400, navbarTransparent: true }
+      }
+    },
+    {
       path: "/new-store-ticket",
       name: "new-store-ticket",
       components: { default: NewStoreTicket, header: MainNavbar },
