@@ -57,9 +57,7 @@
                   >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
-              <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
               <datepicker :format="format"></datepicker>
-              </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <div class="flex-column">
                 <label for="movie">Required proceeding in out of operation hour</label>
