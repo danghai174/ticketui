@@ -97,7 +97,7 @@
 import { LoginCard, FileUpload } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 import axios from 'axios';
-import * as Datepicker from '@livelybone/vue-datepicker';
+import Datepicker from '@livelybone/vue-datepicker';
 
 export default {
   mixins: [Mixins.HeaderImage],
