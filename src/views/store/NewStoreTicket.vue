@@ -57,6 +57,7 @@
                   >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
+              <md-checkbox v-if="selectedDepartment == 'GA'" v-model="options.ga.outofoperationhour">Out of operation hour</md-checkbox>
               <md-field slot="inputs">
                 <label>Summary (*)</label>
                 <md-input v-model="summary"></md-input>
@@ -113,6 +114,12 @@ export default {
           name: "GA"
         }
       ],
+      options: {
+        ga: {
+          outofoperationhour: Null,
+          completeddate: Null
+        }
+      },
       types: {
         it: [
         {
@@ -136,6 +143,28 @@ export default {
         {
           id: 3,
           name: "Regular_1week"
+        }
+        ],
+        ga: [
+        {
+          id: 1,
+          name: "Emergency"
+        },
+        {
+          id: 2,
+          name: "Critical"
+        },
+        {
+          id: 3,
+          name: "Urgent"
+        },
+        {
+          id: 4,
+          name: "Normal"
+        },
+        {
+          id: 5,
+          name: "Low"
         }
         ]
       },
