@@ -58,7 +58,7 @@
                 </md-select>
               </md-field>
               <md-field slot="inputs">
-              <datepicker></datepicker>
+              <datepicker placeholder="tesstttt"></datepicker>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <div class="flex-column">
