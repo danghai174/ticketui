@@ -58,6 +58,9 @@
                 </md-select>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
+              <v-md-date-range-picker></v-md-date-range-picker>
+              </md-field>
+              <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <div class="flex-column">
                 <label for="movie">Required proceeding in out of operation hour</label>
                 <md-checkbox  v-model="ga_outofoperationhour"></md-checkbox>
@@ -95,12 +98,14 @@
 import { LoginCard, FileUpload } from "@/components";
 import Mixins from "@/plugins/basicMixins";
 import axios from 'axios';
+import VMdDateRangePicker from "v-md-date-range-picker";
 
 export default {
   mixins: [Mixins.HeaderImage],
   components: {
     LoginCard,
-    FileUpload
+    FileUpload,
+    VMdDateRangePicker
   },
   bodyClass: "login-page",
   data() {
