@@ -254,5 +254,6 @@ export default {
 .flex-column {
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
 }
 </style>
