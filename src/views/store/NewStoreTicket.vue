@@ -57,7 +57,7 @@
                   >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
-              <md-checkbox v-if="selectedDepartment == 'GA'" v-model="options.ga.outofoperationhour">Out of operation hour</md-checkbox>
+              <md-checkbox v-if="selectedDepartment == 'GA'" v-model="ga_outofoperationhour">Out of operation hour</md-checkbox>
               <md-field slot="inputs">
                 <label>Summary (*)</label>
                 <md-input v-model="summary"></md-input>
@@ -114,12 +114,6 @@ export default {
           name: "GA"
         }
       ],
-      options: {
-        ga: {
-          outofoperationhour: Null,
-          completeddate: Null
-        }
-      },
       types: {
         it: [
         {
@@ -169,6 +163,8 @@ export default {
         ]
       },
       ticketType: "",
+      ga_outofoperationhour: null,
+      ga_date: null,
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
       selectedStore: "HCM-HBT",
