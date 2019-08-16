@@ -58,7 +58,7 @@
                 </md-select>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
-                <label >Required proceeding in out of operation hour</label>
+                <label for="movie">Required proceeding in out of operation hour</label>
                 <md-checkbox  v-model="ga_outofoperationhour"></md-checkbox>
               </md-field>
               <md-field slot="inputs">
