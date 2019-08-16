@@ -2,6 +2,7 @@
   <div class="wrapper">
     <div class="section page-header header-filter" :style="headerStyle">
       <div class="container">
+                    <datepicker :format="format"></datepicker>
         <div class="md-layout">
           <div
             class="md-layout-item md-size-50 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto"
@@ -57,7 +58,7 @@
                   >SCM-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
-              <datepicker :format="format"></datepicker>
+            
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <div class="flex-column">
                 <label for="movie">Required proceeding in out of operation hour</label>
