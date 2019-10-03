@@ -252,7 +252,7 @@ export default {
           name: "Staff Area"
         }
         ]
-      }
+      },
       ticketType: "",
       ga_outofoperationhour: null,
       ga_date: null,
