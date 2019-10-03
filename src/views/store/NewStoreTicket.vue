@@ -53,7 +53,7 @@
                   <md-option
                     v-if="selectedDepartment == 'FINANCE'"
                     :value="type.name"
-                    v-for="(type, index) in types.finance"
+                    v-for="(type, index) in types.fin"
                     :item="type"
                     :key="index"
                   >FIN-{{ type.name }}</md-option>
@@ -146,6 +146,25 @@ export default {
       ],
       types: {
         it: [
+        {
+          id: 1,
+          name: "Issues"
+        },
+        {
+          id: 2,
+          name: "Requests"
+        }
+        acct: [
+        {
+          id: 1,
+          name: "Issues"
+        },
+        {
+          id: 2,
+          name: "Requests"
+        }
+        ],
+        fin: [
         {
           id: 1,
           name: "Issues"
