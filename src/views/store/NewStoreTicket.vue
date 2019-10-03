@@ -157,6 +157,11 @@ export default {
           id: 1,
           name: "Issues"
         },
+        {
+          id: 2,
+          name: "Requests"
+        }
+        ],
         nsd: [
         {
           id: 1,
