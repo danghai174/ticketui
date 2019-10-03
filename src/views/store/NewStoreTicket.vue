@@ -36,26 +36,40 @@
                     :item="type"
                     :key="index"
                   >SCM-{{ type.name }}</md-option>
-                </md-select>
-              </md-field>
-              <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
-                <label for="movie">Problem Location (*)</label>
-                <md-select @change="selecttype($event)" key="ticketType" v-model="selectedType" name="ticketType" id="ticketType">
                   <md-option
                     v-if="selectedDepartment == 'GA'"
                     :value="type.name"
-                    v-for="(type, index) in types.it"
+                    v-for="(type, index) in types.ga"
                     :item="type"
                     :key="index"
                   >GA-{{ type.name }}</md-option>
                   <md-option
-                    v-if="selectedDepartment == 'SCM'"
+                    v-if="selectedDepartment == 'ACCT'"
                     :value="type.name"
-                    v-for="(type, index) in types.scm"
+                    v-for="(type, index) in types.acct"
                     :item="type"
                     :key="index"
-                  >SCM-{{ type.name }}</md-option>
+                  >ACCT-{{ type.name }}</md-option>
+                  <md-option
+                    v-if="selectedDepartment == 'FINANCE'"
+                    :value="type.name"
+                    v-for="(type, index) in types.finance"
+                    :item="type"
+                    :key="index"
+                  >FIN-{{ type.name }}</md-option>
                 </md-select>
+              </md-field>
+              <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
+                <label for="movie">Problem Location (*)</label>
+                <md-select @change="selecttype($event)" key="problemType" v-model="selectedType" name="problemType" id="problemType">
+                  <md-option
+                    v-if="selectedDepartment == 'GA'"
+                    :value="type.name"
+                    v-for="(type, index) in problemtypes.ga"
+                    :item="type"
+                    :key="index"
+                  >GA-{{ type.name }}</md-option>
+                
               </md-field>
               <datepicker placeholder="tesstttt"></datepicker>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
@@ -119,6 +133,14 @@ export default {
         },
         {
           id: 3,
+          name: "ACCT"
+        },       
+        {
+          id: 4,
+          name: "FINANCE"
+        },
+        {
+          id: 5,
           name: "GA"
         }
       ],
@@ -170,6 +192,30 @@ export default {
         }
         ]
       },
+      problemtypes: {
+        ga: [
+        {
+          id: 1,
+          name: "Restaurant"
+        },
+        {
+          id: 2,
+          name: "Main Kitchen"
+        },
+        {
+          id: 3,
+          name: "Pizza Kitchen"
+        },
+        {
+          id: 4,
+          name: "Beverage Area"
+        },
+        {
+          id: 5,
+          name: "Staff Area"
+        }
+        ]
+      }
       ticketType: "",
       ga_outofoperationhour: null,
       ga_date: null,
