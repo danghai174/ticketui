@@ -57,6 +57,13 @@
                     :item="type"
                     :key="index"
                   >FIN-{{ type.name }}</md-option>
+                  <md-option
+                    v-if="selectedDepartment == 'NSD'"
+                    :value="type.name"
+                    v-for="(type, index) in types.nsd"
+                    :item="type"
+                    :key="index"
+                  >NSD-{{ type.name }}</md-option>
                 </md-select>
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
@@ -146,6 +153,11 @@ export default {
       ],
       types: {
         it: [
+        {
+          id: 1,
+          name: "Issues"
+        },
+        nsd: [
         {
           id: 1,
           name: "Issues"
