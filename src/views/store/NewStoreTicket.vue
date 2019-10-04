@@ -262,7 +262,7 @@ export default {
       ga_date: null,
       summary: "",
       image: require("@/assets/img/profile_city.jpg"),
-      selectedStore: "HCM-HBT",
+      selectedStore: "",
       selectedDepartment: "",
       description: "",
       selectedType: "",
@@ -326,7 +326,7 @@ export default {
           submitted_by_email: this.submit_email,
           description: this.description + href,
           c_store_problem_type: this.selectedType,
-          c_store_list: this.selectedStore
+          c_dept: this.selectedDepartment
         }
       }).then(res => {
         console.log(this.submit_email);
