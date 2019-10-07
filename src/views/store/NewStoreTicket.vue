@@ -68,7 +68,7 @@
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <label for="movie">Problem Location (*)</label>
-                <md-select @change="selecttype($event)" key="problemType" v-model="selectedType" name="problemType" id="problemType">
+                <md-select @change="selecttype($event)" key="problemType" v-model="problemType" name="problemType" id="problemType">
                   <md-option
                     v-if="selectedDepartment == 'GA'"
                     :value="type.name"
@@ -266,6 +266,7 @@ export default {
       selectedDepartment: "",
       description: "",
       selectedType: "",
+      problemType: "",
       fileurl: "",
       buttonstatus: true,
       submit_email: "teamhbt@pizza4ps.com"
