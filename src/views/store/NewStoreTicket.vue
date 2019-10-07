@@ -68,7 +68,7 @@
               </md-field>
               <md-field slot="inputs" v-if="selectedDepartment == 'GA'">
                 <label for="movie">Problem Location (*)</label>
-                <md-select @change="selecttype($event)" key="problemType" v-model="problemType" name="problemType" id="problemType">
+                <md-select @change="problemtype($event)" key="problemType" v-model="problemType" name="problemType" id="problemType">
                   <md-option
                     v-if="selectedDepartment == 'GA'"
                     :value="type.name"
@@ -285,6 +285,9 @@ export default {
     },
     selecttype: function() {
         this.selectedType = this.value
+    },
+    problemtype: function() {
+        this.problemType = this.value
     },
     save(formData) {
       // upload data to the server
